@@ -49,8 +49,12 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore --ignore-path .eslintignore"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KelioDev/chess.js-mtp.git"
+  },
   "dependencies": {
-    "chess.js": "^1.0.0-beta.6",
+    "chess.js": "github:KelioDev/chess.js-mtp",
     "chessground": "^9.0.2"
   },
   "peerDependencies": {
