@@ -521,7 +521,7 @@ export class BoardApi {
    * Caution: this will erase the game history. To set position with history call loadPgn with a pgn instead
    */
   setPosition(fen: string): void {
-    this.game.load(fen);
+    this.game.load(fen, { skipValidation: true });
     this.boardState.historyViewerState = { isEnabled: false };
     this.updateGameState();
   }
