@@ -1,31 +1,31 @@
-import { defineComponent as rt, openBlock as ge, createElementBlock as Me, Fragment as Ft, renderList as Bt, createElementVNode as Te, normalizeClass as st, nextTick as Ht, ref as Vt, reactive as je, onMounted as Wt, watch as jt, createBlock as Ut, createCommentVNode as Qt } from "vue";
+import { defineComponent as st, openBlock as me, createElementBlock as xe, Fragment as Bt, renderList as Wt, createElementVNode as De, normalizeClass as at, nextTick as Ht, ref as Vt, reactive as Ue, onMounted as jt, watch as Ft, createBlock as Ut, createCommentVNode as Qt } from "vue";
 const Gt = {
   class: "promotion-dialog",
   open: ""
-}, zt = ["aria-label", "onClick", "onTouchstartPassive"], Zt = /* @__PURE__ */ rt({
+}, zt = ["aria-label", "onClick", "onTouchstartPassive"], Zt = /* @__PURE__ */ st({
   __name: "PromotionDialog",
   props: {
     state: {}
   },
   emits: ["promotionSelected"],
-  setup(t, { emit: e }) {
-    const i = t, o = [
+  setup(e, { emit: t }) {
+    const i = e, o = t, n = [
       { name: "Queen", data: "q" },
       { name: "Knight", data: "n" },
       { name: "Rook", data: "r" },
       { name: "Bishop", data: "b" }
     ];
-    function n(r) {
-      i.state.callback?.(r.data), e("promotionSelected");
+    function r(s) {
+      i.state.callback?.(s.data), o("promotionSelected");
     }
-    return (r, s) => (ge(), Me("dialog", Gt, [
-      (ge(), Me(Ft, null, Bt(o, (a) => Te("button", {
-        key: a.name,
+    return (s, a) => (me(), xe("dialog", Gt, [
+      (me(), xe(Bt, null, Wt(n, (l) => De("button", {
+        key: l.name,
         type: "button",
-        class: st([a.name.toLowerCase(), r.state.color]),
-        "aria-label": a.name,
-        onClick: (l) => n(a),
-        onTouchstartPassive: (l) => n(a)
+        class: at([l.name.toLowerCase(), s.state.color]),
+        "aria-label": l.name,
+        onClick: (c) => r(l),
+        onTouchstartPassive: (c) => r(l)
       }, null, 42, zt)), 64))
     ]));
   }
@@ -56,7 +56,7 @@ const Gt = {
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-const A = "w", q = "b", M = "p", Ae = "n", pe = "b", se = "r", Q = "q", P = "k", we = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", x = -1, Yt = {
+const A = "w", N = "b", E = "p", Oe = "n", pe = "b", se = "r", Q = "q", M = "k", ke = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", q = -1, Yt = {
   NORMAL: "n",
   CAPTURE: "c",
   BIG_PAWN: "b",
@@ -129,7 +129,7 @@ const A = "w", q = "b", M = "p", Ae = "n", pe = "b", se = "r", Q = "q", P = "k",
   "f1",
   "g1",
   "h1"
-], m = {
+], g = {
   NORMAL: 1,
   CAPTURE: 2,
   BIG_PAWN: 4,
@@ -202,10 +202,10 @@ const A = "w", q = "b", M = "p", Ae = "n", pe = "b", se = "r", Q = "q", P = "k",
   f1: 117,
   g1: 118,
   h1: 119
-}, Se = {
+}, Ce = {
   b: [16, 32, 17, 15],
   w: [-16, -32, -17, -15]
-}, Ue = {
+}, Qe = {
   n: [-18, -33, -31, -14, 18, 33, 31, 14],
   b: [-17, -15, 17, 15],
   r: [-16, 1, 16, -1],
@@ -691,134 +691,62 @@ const A = "w", q = "b", M = "p", Ae = "n", pe = "b", se = "r", Q = "q", P = "k",
   0,
   0,
   -17
-], ti = { p: 1, n: 2, b: 4, r: 8, q: 16, k: 32 }, ii = "pnbrqkPNBRQK", Qe = [Ae, pe, se, Q], oi = 7, ni = 6, ri = 1, si = 0, he = {
-  [P]: m.KSIDE_CASTLE,
-  [Q]: m.QSIDE_CASTLE
-}, W = {
+], ti = { p: 1, n: 2, b: 4, r: 8, q: 16, k: 32 }, ii = "pnbrqkPNBRQK", Ge = [Oe, pe, se, Q], oi = 7, ni = 6, ri = 1, si = 0, ue = {
+  [M]: g.KSIDE_CASTLE,
+  [Q]: g.QSIDE_CASTLE
+}, j = {
   w: [
-    { square: b.a1, flag: m.QSIDE_CASTLE },
-    { square: b.h1, flag: m.KSIDE_CASTLE }
+    { square: b.a1, flag: g.QSIDE_CASTLE },
+    { square: b.h1, flag: g.KSIDE_CASTLE }
   ],
   b: [
-    { square: b.a8, flag: m.QSIDE_CASTLE },
-    { square: b.h8, flag: m.KSIDE_CASTLE }
+    { square: b.a8, flag: g.QSIDE_CASTLE },
+    { square: b.h8, flag: g.KSIDE_CASTLE }
   ]
 }, ai = { b: ri, w: ni }, li = ["1-0", "0-1", "1/2-1/2", "*"];
-function J(t) {
-  return t >> 4;
+function J(e) {
+  return e >> 4;
 }
-function ae(t) {
-  return t & 15;
+function ae(e) {
+  return e & 15;
 }
-function at(t) {
-  return "0123456789".indexOf(t) !== -1;
+function ci(e) {
+  return "0123456789".indexOf(e) !== -1;
 }
-function N(t) {
-  const e = ae(t), i = J(t);
-  return "abcdefgh".substring(e, e + 1) + "87654321".substring(i, i + 1);
+function I(e) {
+  const t = ae(e), i = J(e);
+  return "abcdefgh".substring(t, t + 1) + "87654321".substring(i, i + 1);
 }
-function oe(t) {
-  return t === A ? q : A;
+function oe(e) {
+  return e === A ? N : A;
 }
-function ci(t) {
-  const e = t.split(/\s+/);
-  if (e.length !== 6)
-    return {
-      ok: !1,
-      error: "Invalid FEN: must contain six space-delimited fields"
-    };
-  const i = parseInt(e[5], 10);
-  if (isNaN(i) || i <= 0)
-    return {
-      ok: !1,
-      error: "Invalid FEN: move number must be a positive integer"
-    };
-  const o = parseInt(e[4], 10);
-  if (isNaN(o) || o < 0)
-    return {
-      ok: !1,
-      error: "Invalid FEN: half move counter number must be a non-negative integer"
-    };
-  if (!/^(-|[abcdefgh][36])$/.test(e[3]))
-    return { ok: !1, error: "Invalid FEN: en-passant square is invalid" };
-  if (/[^kKqQ-]/.test(e[2]))
-    return { ok: !1, error: "Invalid FEN: castling availability is invalid" };
-  if (!/^(w|b)$/.test(e[1]))
-    return { ok: !1, error: "Invalid FEN: side-to-move is invalid" };
-  const n = e[0].split("/");
-  if (n.length !== 8)
-    return {
-      ok: !1,
-      error: "Invalid FEN: piece data does not contain 8 '/'-delimited rows"
-    };
-  for (let s = 0; s < n.length; s++) {
-    let a = 0, l = !1;
-    for (let c = 0; c < n[s].length; c++)
-      if (at(n[s][c])) {
-        if (l)
-          return {
-            ok: !1,
-            error: "Invalid FEN: piece data is invalid (consecutive number)"
-          };
-        a += parseInt(n[s][c], 10), l = !0;
-      } else {
-        if (!/^[prnbqkPRNBQK]$/.test(n[s][c]))
-          return {
-            ok: !1,
-            error: "Invalid FEN: piece data is invalid (invalid piece)"
-          };
-        a += 1, l = !1;
-      }
-    if (a !== 8)
-      return {
-        ok: !1,
-        error: "Invalid FEN: piece data is invalid (too many squares in rank)"
-      };
-  }
-  if (e[3][1] == "3" && e[1] == "w" || e[3][1] == "6" && e[1] == "b")
-    return { ok: !1, error: "Invalid FEN: illegal en-passant square" };
-  const r = [
-    { color: "white", regex: /K/g },
-    { color: "black", regex: /k/g }
-  ];
-  for (const { color: s, regex: a } of r) {
-    if (!a.test(e[0]))
-      return { ok: !1, error: `Invalid FEN: missing ${s} king` };
-    if ((e[0].match(a) || []).length > 1)
-      return { ok: !1, error: `Invalid FEN: too many ${s} kings` };
-  }
-  return Array.from(n[0] + n[7]).some((s) => s.toUpperCase() === "P") ? {
-    ok: !1,
-    error: "Invalid FEN: some pawns are on the edge rows"
-  } : { ok: !0 };
-}
-function di(t, e) {
-  const i = t.from, o = t.to, n = t.piece;
+function di(e, t) {
+  const i = e.from, o = e.to, n = e.piece;
   let r = 0, s = 0, a = 0;
-  for (let l = 0, c = e.length; l < c; l++) {
-    const p = e[l].from, u = e[l].to, d = e[l].piece;
-    n === d && i !== p && o === u && (r++, J(i) === J(p) && s++, ae(i) === ae(p) && a++);
+  for (let l = 0, c = t.length; l < c; l++) {
+    const p = t[l].from, h = t[l].to, d = t[l].piece;
+    n === d && i !== p && o === h && (r++, J(i) === J(p) && s++, ae(i) === ae(p) && a++);
   }
-  return r > 0 ? s > 0 && a > 0 ? N(i) : a > 0 ? N(i).charAt(1) : N(i).charAt(0) : "";
+  return r > 0 ? s > 0 && a > 0 ? I(i) : a > 0 ? I(i).charAt(1) : I(i).charAt(0) : "";
 }
-function j(t, e, i, o, n, r = void 0, s = m.NORMAL) {
+function F(e, t, i, o, n, r = void 0, s = g.NORMAL) {
   const a = J(o);
-  if (n === M && (a === oi || a === si))
-    for (let l = 0; l < Qe.length; l++) {
-      const c = Qe[l];
-      t.push({
-        color: e,
+  if (n === E && (a === oi || a === si))
+    for (let l = 0; l < Ge.length; l++) {
+      const c = Ge[l];
+      e.push({
+        color: t,
         from: i,
         to: o,
         piece: n,
         captured: r,
         promotion: c,
-        flags: s | m.PROMOTION
+        flags: s | g.PROMOTION
       });
     }
   else
-    t.push({
-      color: e,
+    e.push({
+      color: t,
       from: i,
       to: o,
       piece: n,
@@ -826,97 +754,88 @@ function j(t, e, i, o, n, r = void 0, s = m.NORMAL) {
       flags: s
     });
 }
-function Ge(t) {
-  let e = t.charAt(0);
-  return e >= "a" && e <= "h" ? t.match(/[a-h]\d.*[a-h]\d/) ? void 0 : M : (e = e.toLowerCase(), e === "o" ? P : e);
+function ze(e) {
+  let t = e.charAt(0);
+  return t >= "a" && t <= "h" ? e.match(/[a-h]\d.*[a-h]\d/) ? void 0 : E : (t = t.toLowerCase(), t === "o" ? M : t);
 }
-function ye(t) {
-  return t.replace(/=/, "").replace(/[+#]?[?!]*$/, "");
+function Pe(e) {
+  return e.replace(/=/, "").replace(/[+#]?[?!]*$/, "");
 }
-function ke(t) {
-  return t.split(" ").slice(0, 4).join(" ");
-}
-class ui {
+class hi {
   _board = new Array(128);
   _turn = A;
   _header = {};
-  _kings = { w: x, b: x };
+  _kings = { w: q, b: q };
   _epSquare = -1;
   _halfMoves = 0;
   _moveNumber = 0;
   _history = [];
   _comments = {};
   _castling = { w: 0, b: 0 };
-  // tracks number of times a position has been seen for repetition checking
-  _positionCount = {};
-  constructor(e = we) {
-    this.load(e);
+  constructor(t = ke) {
+    this.load(t);
   }
-  clear({ preserveHeaders: e = !1 } = {}) {
-    this._board = new Array(128), this._kings = { w: x, b: x }, this._turn = A, this._castling = { w: 0, b: 0 }, this._epSquare = x, this._halfMoves = 0, this._moveNumber = 1, this._history = [], this._comments = {}, this._header = e ? this._header : {}, this._positionCount = {}, delete this._header.SetUp, delete this._header.FEN;
+  clear(t = !1) {
+    this._board = new Array(128), this._kings = { w: q, b: q }, this._turn = A, this._castling = { w: 0, b: 0 }, this._epSquare = q, this._halfMoves = 0, this._moveNumber = 1, this._history = [], this._comments = {}, this._header = t ? this._header : {}, this._updateSetup(this.fen());
   }
-  removeHeader(e) {
-    e in this._header && delete this._header[e];
+  removeHeader(t) {
+    t in this._header && delete this._header[t];
   }
-  load(e, { skipValidation: i = !0, preserveHeaders: o = !1 } = {}) {
-    let n = e.split(/\s+/);
-    if (n.length >= 2 && n.length < 6) {
-      const a = ["-", "-", "0", "1"];
-      e = n.concat(a.slice(-(6 - n.length))).join(" ");
+  load(t, i = !1) {
+    let o = t.split(/\s+/);
+    if (o.length >= 2 && o.length < 6) {
+      const s = ["-", "-", "0", "1"];
+      t = o.concat(s.slice(-(6 - o.length))).join(" ");
     }
-    if (n = e.split(/\s+/), !i) {
-      const { ok: a, error: l } = ci(e);
-      if (!a)
-        throw new Error(l);
-    }
-    const r = n[0];
-    let s = 0;
-    this.clear({ preserveHeaders: o });
-    for (let a = 0; a < r.length; a++) {
-      const l = r.charAt(a);
-      if (l === "/")
-        s += 8;
-      else if (at(l))
-        s += parseInt(l, 10);
+    o = t.split(/\s+/);
+    const n = o[0];
+    let r = 0;
+    this.clear(i);
+    for (let s = 0; s < n.length; s++) {
+      const a = n.charAt(s);
+      if (a === "/")
+        r += 8;
+      else if (ci(a))
+        r += parseInt(a, 10);
       else {
-        const c = l < "a" ? A : q;
-        this._put({ type: l.toLowerCase(), color: c }, N(s)), s++;
+        const l = a < "a" ? A : N;
+        this.put({ type: a.toLowerCase(), color: l }, I(r)), r++;
       }
     }
-    this._turn = n[1], n[2].indexOf("K") > -1 && (this._castling.w |= m.KSIDE_CASTLE), n[2].indexOf("Q") > -1 && (this._castling.w |= m.QSIDE_CASTLE), n[2].indexOf("k") > -1 && (this._castling.b |= m.KSIDE_CASTLE), n[2].indexOf("q") > -1 && (this._castling.b |= m.QSIDE_CASTLE), this._epSquare = n[3] === "-" ? x : b[n[3]], this._halfMoves = parseInt(n[4], 10), this._moveNumber = parseInt(n[5], 10), this._updateSetup(e), this._incPositionCount(e);
+    this._turn = o[1], o[2].indexOf("K") > -1 && (this._castling.w |= g.KSIDE_CASTLE), o[2].indexOf("Q") > -1 && (this._castling.w |= g.QSIDE_CASTLE), o[2].indexOf("k") > -1 && (this._castling.b |= g.KSIDE_CASTLE), o[2].indexOf("q") > -1 && (this._castling.b |= g.QSIDE_CASTLE), this._epSquare = o[3] === "-" ? q : b[o[3]], this._halfMoves = parseInt(o[4], 10), this._moveNumber = parseInt(o[5], 10), this._updateSetup(this.fen());
   }
   fen() {
-    let e = 0, i = "";
+    let t = 0, i = "";
     for (let r = b.a8; r <= b.h1; r++) {
       if (this._board[r]) {
-        e > 0 && (i += e, e = 0);
+        t > 0 && (i += t, t = 0);
         const { color: s, type: a } = this._board[r];
         i += s === A ? a.toUpperCase() : a.toLowerCase();
       } else
-        e++;
-      r + 1 & 136 && (e > 0 && (i += e), r !== b.h1 && (i += "/"), e = 0, r += 8);
+        t++;
+      r + 1 & 136 && (t > 0 && (i += t), r !== b.h1 && (i += "/"), t = 0, r += 8);
     }
     let o = "";
-    this._castling[A] & m.KSIDE_CASTLE && (o += "K"), this._castling[A] & m.QSIDE_CASTLE && (o += "Q"), this._castling[q] & m.KSIDE_CASTLE && (o += "k"), this._castling[q] & m.QSIDE_CASTLE && (o += "q"), o = o || "-";
+    this._castling[A] & g.KSIDE_CASTLE && (o += "K"), this._castling[A] & g.QSIDE_CASTLE && (o += "Q"), this._castling[N] & g.KSIDE_CASTLE && (o += "k"), this._castling[N] & g.QSIDE_CASTLE && (o += "q"), o = o || "-";
     let n = "-";
-    if (this._epSquare !== x) {
+    if (this._epSquare !== q) {
       const r = this._epSquare + (this._turn === A ? 16 : -16), s = [r + 1, r - 1];
       for (const a of s) {
         if (a & 136)
           continue;
         const l = this._turn;
-        if (this._board[a]?.color === l && this._board[a]?.type === M) {
+        if (this._board[a]?.color === l && this._board[a]?.type === E) {
           this._makeMove({
             color: l,
             from: a,
             to: this._epSquare,
-            piece: M,
-            captured: M,
-            flags: m.EP_CAPTURE
+            piece: E,
+            captured: E,
+            flags: g.EP_CAPTURE
           });
           const c = !this._isKingAttacked(l);
           if (this._undoMove(), c) {
-            n = N(this._epSquare);
+            n = I(this._epSquare);
             break;
           }
         }
@@ -937,102 +856,84 @@ class ui {
    * is equal to the default position, the SetUp and FEN are deleted the setup
    * is only updated if history.length is zero, ie moves haven't been made.
    */
-  _updateSetup(e) {
-    this._history.length > 0 || (e !== we ? (this._header.SetUp = "1", this._header.FEN = e) : (delete this._header.SetUp, delete this._header.FEN));
+  _updateSetup(t) {
+    this._history.length > 0 || (t !== ke ? (this._header.SetUp = "1", this._header.FEN = t) : (delete this._header.SetUp, delete this._header.FEN));
   }
   reset() {
-    this.load(we);
+    this.load(ke);
   }
-  get(e) {
-    return this._board[b[e]];
+  get(t) {
+    return this._board[b[t]] || !1;
   }
-  put({ type: e, color: i }, o) {
-    return this._put({ type: e, color: i }, o) ? (this._updateCastlingRights(), this._updateEnPassantSquare(), this._updateSetup(this.fen()), !0) : !1;
-  }
-  _put({ type: e, color: i }, o) {
-    if (ii.indexOf(e.toLowerCase()) === -1 || !(o in b))
+  put({ type: t, color: i }, o) {
+    if (ii.indexOf(t.toLowerCase()) === -1 || !(o in b))
       return !1;
     const n = b[o];
-    if (e == P && !(this._kings[i] == x || this._kings[i] == n))
-      return !1;
-    const r = this._board[n];
-    return r && r.type === P && (this._kings[r.color] = x), this._board[n] = { type: e, color: i }, e === P && (this._kings[i] = n), !0;
+    return t == M && !(this._kings[i] == q || this._kings[i] == n) ? !1 : (this._board[n] = { type: t, color: i }, t === M && (this._kings[i] = n), this._updateCastlingRights(), this._updateEnPassantSquare(), this._updateSetup(this.fen()), !0);
   }
-  remove(e) {
-    const i = this.get(e);
-    return delete this._board[b[e]], i && i.type === P && (this._kings[i.color] = x), this._updateCastlingRights(), this._updateEnPassantSquare(), this._updateSetup(this.fen()), i;
+  remove(t) {
+    const i = this.get(t);
+    return delete this._board[b[t]], i && i.type === M && (this._kings[i.color] = q), this._updateCastlingRights(), this._updateEnPassantSquare(), this._updateSetup(this.fen()), i;
   }
   _updateCastlingRights() {
-    const e = this._board[b.e1]?.type === P && this._board[b.e1]?.color === A, i = this._board[b.e8]?.type === P && this._board[b.e8]?.color === q;
-    (!e || this._board[b.a1]?.type !== se || this._board[b.a1]?.color !== A) && (this._castling.w &= ~m.QSIDE_CASTLE), (!e || this._board[b.h1]?.type !== se || this._board[b.h1]?.color !== A) && (this._castling.w &= ~m.KSIDE_CASTLE), (!i || this._board[b.a8]?.type !== se || this._board[b.a8]?.color !== q) && (this._castling.b &= ~m.QSIDE_CASTLE), (!i || this._board[b.h8]?.type !== se || this._board[b.h8]?.color !== q) && (this._castling.b &= ~m.KSIDE_CASTLE);
+    const t = this._board[b.e1]?.type === M && this._board[b.e1]?.color === A, i = this._board[b.e8]?.type === M && this._board[b.e8]?.color === N;
+    (!t || this._board[b.a1]?.type !== se || this._board[b.a1]?.color !== A) && (this._castling.w &= ~g.QSIDE_CASTLE), (!t || this._board[b.h1]?.type !== se || this._board[b.h1]?.color !== A) && (this._castling.w &= ~g.KSIDE_CASTLE), (!i || this._board[b.a8]?.type !== se || this._board[b.a8]?.color !== N) && (this._castling.b &= ~g.QSIDE_CASTLE), (!i || this._board[b.h8]?.type !== se || this._board[b.h8]?.color !== N) && (this._castling.b &= ~g.KSIDE_CASTLE);
   }
   _updateEnPassantSquare() {
-    if (this._epSquare === x)
+    if (this._epSquare === q)
       return;
-    const e = this._epSquare + (this._turn === A ? -16 : 16), i = this._epSquare + (this._turn === A ? 16 : -16), o = [i + 1, i - 1];
-    if (this._board[e] !== null || this._board[this._epSquare] !== null || this._board[i]?.color !== oe(this._turn) || this._board[i]?.type !== M) {
-      this._epSquare = x;
+    const t = this._epSquare + (this._turn === A ? -16 : 16), i = this._epSquare + (this._turn === A ? 16 : -16), o = [i + 1, i - 1];
+    if (this._board[t] !== null || this._board[this._epSquare] !== null || this._board[i]?.color !== oe(this._turn) || this._board[i]?.type !== E) {
+      this._epSquare = q;
       return;
     }
-    const n = (r) => !(r & 136) && this._board[r]?.color === this._turn && this._board[r]?.type === M;
-    o.some(n) || (this._epSquare = x);
+    const n = (r) => !(r & 136) && this._board[r]?.color === this._turn && this._board[r]?.type === E;
+    o.some(n) || (this._epSquare = q);
   }
-  _attacked(e, i, o) {
-    const n = [];
-    for (let r = b.a8; r <= b.h1; r++) {
-      if (r & 136) {
-        r += 7;
+  _attacked(t, i) {
+    for (let o = b.a8; o <= b.h1; o++) {
+      if (o & 136) {
+        o += 7;
         continue;
       }
-      if (this._board[r] === void 0 || this._board[r].color !== e)
+      if (this._board[o] === void 0 || this._board[o].color !== t)
         continue;
-      const s = this._board[r], a = r - i;
-      if (a === 0)
+      const n = this._board[o], r = o - i;
+      if (r === 0)
         continue;
-      const l = a + 119;
-      if (Jt[l] & ti[s.type]) {
-        if (s.type === M) {
-          if (a > 0 && s.color === A || a <= 0 && s.color === q)
-            if (o)
-              n.push(N(r));
-            else
+      const s = r + 119;
+      if (Jt[s] & ti[n.type]) {
+        if (n.type === E) {
+          if (r > 0) {
+            if (n.color === A)
               return !0;
+          } else if (n.color === N)
+            return !0;
           continue;
         }
-        if (s.type === "n" || s.type === "k")
-          if (o) {
-            n.push(N(r));
-            continue;
-          } else
-            return !0;
-        const c = ei[l];
-        let p = r + c, u = !1;
-        for (; p !== i; ) {
-          if (this._board[p] != null) {
-            u = !0;
+        if (n.type === "n" || n.type === "k")
+          return !0;
+        const a = ei[s];
+        let l = o + a, c = !1;
+        for (; l !== i; ) {
+          if (this._board[l] != null) {
+            c = !0;
             break;
           }
-          p += c;
+          l += a;
         }
-        if (!u)
-          if (o) {
-            n.push(N(r));
-            continue;
-          } else
-            return !0;
+        if (!c)
+          return !0;
       }
     }
-    return o ? n : !1;
+    return !1;
   }
-  attackers(e, i) {
-    return i ? this._attacked(i, b[e], !0) : this._attacked(this._turn, b[e], !0);
+  _isKingAttacked(t) {
+    const i = this._kings[t];
+    return i === -1 ? !1 : this._attacked(oe(t), i);
   }
-  _isKingAttacked(e) {
-    const i = this._kings[e];
-    return i === -1 ? !1 : this._attacked(oe(e), i);
-  }
-  isAttacked(e, i) {
-    return this._attacked(i, b[e]);
+  isAttacked(t, i) {
+    return this._attacked(i, b[t]);
   }
   isCheck() {
     return this._isKingAttacked(this._turn);
@@ -1047,7 +948,7 @@ class ui {
     return !this.isCheck() && this._moves().length === 0;
   }
   isInsufficientMaterial() {
-    const e = {
+    const t = {
       b: 0,
       n: 0,
       r: 0,
@@ -1062,16 +963,16 @@ class ui {
         continue;
       }
       const s = this._board[r];
-      s && (e[s.type] = s.type in e ? e[s.type] + 1 : 1, s.type === pe && i.push(n), o++);
+      s && (t[s.type] = s.type in t ? t[s.type] + 1 : 1, s.type === pe && i.push(n), o++);
     }
     if (o === 2)
       return !0;
     if (
       // k vs. kn .... or .... k vs. kb
-      o === 3 && (e[pe] === 1 || e[Ae] === 1)
+      o === 3 && (t[pe] === 1 || t[Oe] === 1)
     )
       return !0;
-    if (o === e[pe] + 2) {
+    if (o === t[pe] + 2) {
       let r = 0;
       const s = i.length;
       for (let a = 0; a < s; a++)
@@ -1082,7 +983,24 @@ class ui {
     return !1;
   }
   isThreefoldRepetition() {
-    return this._getPositionCount(this.fen()) >= 3;
+    const t = [], i = {};
+    let o = !1;
+    for (; ; ) {
+      const n = this._undoMove();
+      if (!n)
+        break;
+      t.push(n);
+    }
+    for (; ; ) {
+      const n = this.fen().split(" ").slice(0, 4).join(" ");
+      i[n] = n in i ? i[n] + 1 : 1, i[n] >= 3 && (o = !0);
+      const r = t.pop();
+      if (r)
+        this._makeMove(r);
+      else
+        break;
+    }
+    return o;
   }
   isDraw() {
     return this._halfMoves >= 100 || // 50 moves per side = 100 half moves
@@ -1091,90 +1009,90 @@ class ui {
   isGameOver() {
     return this.isCheckmate() || this.isStalemate() || this.isDraw();
   }
-  moves({ verbose: e = !1, square: i = void 0, piece: o = void 0 } = {}) {
+  moves({ verbose: t = !1, square: i = void 0, piece: o = void 0 } = {}) {
     const n = this._moves({ square: i, piece: o });
-    return e ? n.map((r) => this._makePretty(r)) : n.map((r) => this._moveToSan(r, n));
+    return t ? n.map((r) => this._makePretty(r)) : n.map((r) => this._moveToSan(r, n));
   }
-  _moves({ legal: e = !0, piece: i = void 0, square: o = void 0 } = {}) {
+  _moves({ legal: t = !0, piece: i = void 0, square: o = void 0 } = {}) {
     const n = o ? o.toLowerCase() : void 0, r = i?.toLowerCase(), s = [], a = this._turn, l = oe(a);
-    let c = b.a8, p = b.h1, u = !1;
+    let c = b.a8, p = b.h1, h = !1;
     if (n)
       if (n in b)
-        c = p = b[n], u = !0;
+        c = p = b[n], h = !0;
       else
         return [];
-    for (let h = c; h <= p; h++) {
-      if (h & 136) {
-        h += 7;
+    for (let u = c; u <= p; u++) {
+      if (u & 136) {
+        u += 7;
         continue;
       }
-      if (!this._board[h] || this._board[h].color === l)
+      if (!this._board[u] || this._board[u].color === l)
         continue;
-      const { type: g } = this._board[h];
+      const { type: m } = this._board[u];
       let f;
-      if (g === M) {
-        if (r && r !== g)
+      if (m === E) {
+        if (r && r !== m)
           continue;
-        f = h + Se[a][0], this._board[f] || (j(s, a, h, f, M), f = h + Se[a][1], ai[a] === J(h) && !this._board[f] && j(s, a, h, f, M, void 0, m.BIG_PAWN));
+        f = u + Ce[a][0], this._board[f] || (F(s, a, u, f, E), f = u + Ce[a][1], ai[a] === J(u) && !this._board[f] && F(s, a, u, f, E, void 0, g.BIG_PAWN));
         for (let y = 2; y < 4; y++)
-          f = h + Se[a][y], !(f & 136) && (this._board[f]?.color === l ? j(s, a, h, f, M, this._board[f].type, m.CAPTURE) : f === this._epSquare && j(s, a, h, f, M, M, m.EP_CAPTURE));
+          f = u + Ce[a][y], !(f & 136) && (this._board[f]?.color === l ? F(s, a, u, f, E, this._board[f].type, g.CAPTURE) : f === this._epSquare && F(s, a, u, f, E, E, g.EP_CAPTURE));
       } else {
-        if (r && r !== g)
+        if (r && r !== m)
           continue;
-        for (let y = 0, S = Ue[g].length; y < S; y++) {
-          const k = Ue[g][y];
-          for (f = h; f += k, !(f & 136); ) {
+        for (let y = 0, S = Qe[m].length; y < S; y++) {
+          const k = Qe[m][y];
+          for (f = u; f += k, !(f & 136); ) {
             if (!this._board[f])
-              j(s, a, h, f, g);
+              F(s, a, u, f, m);
             else {
               if (this._board[f].color === a)
                 break;
-              j(s, a, h, f, g, this._board[f].type, m.CAPTURE);
+              F(s, a, u, f, m, this._board[f].type, g.CAPTURE);
               break;
             }
-            if (g === Ae || g === P)
+            if (m === Oe || m === M)
               break;
           }
         }
       }
     }
-    if ((r === void 0 || r === P) && (!u || p === this._kings[a])) {
-      if (this._castling[a] & m.KSIDE_CASTLE) {
-        const h = this._kings[a], g = h + 2;
-        !this._board[h + 1] && !this._board[g] && !this._attacked(l, this._kings[a]) && !this._attacked(l, h + 1) && !this._attacked(l, g) && j(s, a, this._kings[a], g, P, void 0, m.KSIDE_CASTLE);
+    if ((r === void 0 || r === M) && (!h || p === this._kings[a])) {
+      if (this._castling[a] & g.KSIDE_CASTLE) {
+        const u = this._kings[a], m = u + 2;
+        !this._board[u + 1] && !this._board[m] && !this._attacked(l, this._kings[a]) && !this._attacked(l, u + 1) && !this._attacked(l, m) && F(s, a, this._kings[a], m, M, void 0, g.KSIDE_CASTLE);
       }
-      if (this._castling[a] & m.QSIDE_CASTLE) {
-        const h = this._kings[a], g = h - 2;
-        !this._board[h - 1] && !this._board[h - 2] && !this._board[h - 3] && !this._attacked(l, this._kings[a]) && !this._attacked(l, h - 1) && !this._attacked(l, g) && j(s, a, this._kings[a], g, P, void 0, m.QSIDE_CASTLE);
+      if (this._castling[a] & g.QSIDE_CASTLE) {
+        const u = this._kings[a], m = u - 2;
+        !this._board[u - 1] && !this._board[u - 2] && !this._board[u - 3] && !this._attacked(l, this._kings[a]) && !this._attacked(l, u - 1) && !this._attacked(l, m) && F(s, a, this._kings[a], m, M, void 0, g.QSIDE_CASTLE);
       }
     }
-    if (!e || this._kings[a] === -1)
+    if (!t || this._kings[a] === -1)
       return s;
     const d = [];
-    for (let h = 0, g = s.length; h < g; h++)
-      this._makeMove(s[h]), this._isKingAttacked(a) || d.push(s[h]), this._undoMove();
+    for (let u = 0, m = s.length; u < m; u++)
+      this._makeMove(s[u]), this._isKingAttacked(a) || d.push(s[u]), this._undoMove();
     return d;
   }
-  move(e, { strict: i = !1 } = {}) {
+  move(t, { strict: i = !1 } = {}) {
     let o = null;
-    if (typeof e == "string")
-      o = this._moveFromSan(e, i);
-    else if (typeof e == "object") {
+    if (typeof t == "string")
+      o = this._moveFromSan(t, i);
+    else if (typeof t == "object") {
       const r = this._moves();
       for (let s = 0, a = r.length; s < a; s++)
-        if (e.from === N(r[s].from) && e.to === N(r[s].to) && (!("promotion" in r[s]) || e.promotion === r[s].promotion)) {
+        if (t.from === I(r[s].from) && t.to === I(r[s].to) && (!("promotion" in r[s]) || t.promotion === r[s].promotion)) {
           o = r[s];
           break;
         }
     }
     if (!o)
-      throw typeof e == "string" ? new Error(`Invalid move: ${e}`) : new Error(`Invalid move: ${JSON.stringify(e)}`);
+      throw typeof t == "string" ? new Error(`Invalid move: ${t}`) : new Error(`Invalid move: ${JSON.stringify(t)}`);
     const n = this._makePretty(o);
-    return this._makeMove(o), this._incPositionCount(n.after), n;
+    return this._makeMove(o), n;
   }
-  _push(e) {
+  _push(t) {
     this._history.push({
-      move: e,
+      move: t,
       kings: { b: this._kings.b, w: this._kings.w },
       turn: this._turn,
       castling: { b: this._castling.b, w: this._castling.w },
@@ -1183,73 +1101,69 @@ class ui {
       moveNumber: this._moveNumber
     });
   }
-  _makeMove(e) {
+  _makeMove(t) {
     const i = this._turn, o = oe(i);
-    if (this._push(e), this._board[e.to] = this._board[e.from], delete this._board[e.from], e.flags & m.EP_CAPTURE && (this._turn === q ? delete this._board[e.to - 16] : delete this._board[e.to + 16]), e.promotion && (this._board[e.to] = { type: e.promotion, color: i }), this._board[e.to].type === P) {
-      if (this._kings[i] = e.to, e.flags & m.KSIDE_CASTLE) {
-        const n = e.to - 1, r = e.to + 1;
+    if (this._push(t), this._board[t.to] = this._board[t.from], delete this._board[t.from], t.flags & g.EP_CAPTURE && (this._turn === N ? delete this._board[t.to - 16] : delete this._board[t.to + 16]), t.promotion && (this._board[t.to] = { type: t.promotion, color: i }), this._board[t.to].type === M) {
+      if (this._kings[i] = t.to, t.flags & g.KSIDE_CASTLE) {
+        const n = t.to - 1, r = t.to + 1;
         this._board[n] = this._board[r], delete this._board[r];
-      } else if (e.flags & m.QSIDE_CASTLE) {
-        const n = e.to + 1, r = e.to - 2;
+      } else if (t.flags & g.QSIDE_CASTLE) {
+        const n = t.to + 1, r = t.to - 2;
         this._board[n] = this._board[r], delete this._board[r];
       }
       this._castling[i] = 0;
     }
     if (this._castling[i]) {
-      for (let n = 0, r = W[i].length; n < r; n++)
-        if (e.from === W[i][n].square && this._castling[i] & W[i][n].flag) {
-          this._castling[i] ^= W[i][n].flag;
+      for (let n = 0, r = j[i].length; n < r; n++)
+        if (t.from === j[i][n].square && this._castling[i] & j[i][n].flag) {
+          this._castling[i] ^= j[i][n].flag;
           break;
         }
     }
     if (this._castling[o]) {
-      for (let n = 0, r = W[o].length; n < r; n++)
-        if (e.to === W[o][n].square && this._castling[o] & W[o][n].flag) {
-          this._castling[o] ^= W[o][n].flag;
+      for (let n = 0, r = j[o].length; n < r; n++)
+        if (t.to === j[o][n].square && this._castling[o] & j[o][n].flag) {
+          this._castling[o] ^= j[o][n].flag;
           break;
         }
     }
-    e.flags & m.BIG_PAWN ? i === q ? this._epSquare = e.to - 16 : this._epSquare = e.to + 16 : this._epSquare = x, e.piece === M ? this._halfMoves = 0 : e.flags & (m.CAPTURE | m.EP_CAPTURE) ? this._halfMoves = 0 : this._halfMoves++, i === q && this._moveNumber++, this._turn = o;
+    t.flags & g.BIG_PAWN ? i === N ? this._epSquare = t.to - 16 : this._epSquare = t.to + 16 : this._epSquare = q, t.piece === E ? this._halfMoves = 0 : t.flags & (g.CAPTURE | g.EP_CAPTURE) ? this._halfMoves = 0 : this._halfMoves++, i === N && this._moveNumber++, this._turn = o;
   }
   undo() {
-    const e = this._undoMove();
-    if (e) {
-      const i = this._makePretty(e);
-      return this._decPositionCount(i.after), i;
-    }
-    return null;
+    const t = this._undoMove();
+    return t ? this._makePretty(t) : null;
   }
   _undoMove() {
-    const e = this._history.pop();
-    if (e === void 0)
+    const t = this._history.pop();
+    if (t === void 0)
       return null;
-    const i = e.move;
-    this._kings = e.kings, this._turn = e.turn, this._castling = e.castling, this._epSquare = e.epSquare, this._halfMoves = e.halfMoves, this._moveNumber = e.moveNumber;
+    const i = t.move;
+    this._kings = t.kings, this._turn = t.turn, this._castling = t.castling, this._epSquare = t.epSquare, this._halfMoves = t.halfMoves, this._moveNumber = t.moveNumber;
     const o = this._turn, n = oe(o);
     if (this._board[i.from] = this._board[i.to], this._board[i.from].type = i.piece, delete this._board[i.to], i.captured)
-      if (i.flags & m.EP_CAPTURE) {
+      if (i.flags & g.EP_CAPTURE) {
         let r;
-        o === q ? r = i.to - 16 : r = i.to + 16, this._board[r] = { type: M, color: n };
+        o === N ? r = i.to - 16 : r = i.to + 16, this._board[r] = { type: E, color: n };
       } else
         this._board[i.to] = { type: i.captured, color: n };
-    if (i.flags & (m.KSIDE_CASTLE | m.QSIDE_CASTLE)) {
+    if (i.flags & (g.KSIDE_CASTLE | g.QSIDE_CASTLE)) {
       let r, s;
-      i.flags & m.KSIDE_CASTLE ? (r = i.to + 1, s = i.to - 1) : (r = i.to - 2, s = i.to + 1), this._board[r] = this._board[s], delete this._board[s];
+      i.flags & g.KSIDE_CASTLE ? (r = i.to + 1, s = i.to - 1) : (r = i.to - 2, s = i.to + 1), this._board[r] = this._board[s], delete this._board[s];
     }
     return i;
   }
-  pgn({ newline: e = `
+  pgn({ newline: t = `
 `, maxWidth: i = 0 } = {}) {
     const o = [];
     let n = !1;
     for (const d in this._header)
-      o.push("[" + d + ' "' + this._header[d] + '"]' + e), n = !0;
-    n && this._history.length && o.push(e);
+      o.push("[" + d + ' "' + this._header[d] + '"]' + t), n = !0;
+    n && this._history.length && o.push(t);
     const r = (d) => {
-      const h = this._comments[this.fen()];
-      if (typeof h < "u") {
-        const g = d.length > 0 ? " " : "";
-        d = `${d}${g}{${h}}`;
+      const u = this._comments[this.fen()];
+      if (typeof u < "u") {
+        const m = d.length > 0 ? " " : "";
+        d = `${d}${m}{${u}}`;
       }
       return d;
     }, s = [];
@@ -1263,8 +1177,8 @@ class ui {
       if (!d)
         break;
       if (!this._history.length && d.color === "b") {
-        const h = `${this._moveNumber}. ...`;
-        l = l ? `${l} ${h}` : h;
+        const u = `${this._moveNumber}. ...`;
+        l = l ? `${l} ${u}` : u;
       } else
         d.color === "w" && (l.length && a.push(l), l = this._moveNumber + ".");
       l = l + " " + this._moveToSan(d, this._moves({ legal: !0 })), this._makeMove(d);
@@ -1273,34 +1187,34 @@ class ui {
       return o.join("") + a.join(" ");
     const c = function() {
       return o.length > 0 && o[o.length - 1] === " " ? (o.pop(), !0) : !1;
-    }, p = function(d, h) {
-      for (const g of h.split(" "))
-        if (g) {
-          if (d + g.length > i) {
+    }, p = function(d, u) {
+      for (const m of u.split(" "))
+        if (m) {
+          if (d + m.length > i) {
             for (; c(); )
               d--;
-            o.push(e), d = 0;
+            o.push(t), d = 0;
           }
-          o.push(g), d += g.length, o.push(" "), d++;
+          o.push(m), d += m.length, o.push(" "), d++;
         }
       return c() && d--, d;
     };
-    let u = 0;
+    let h = 0;
     for (let d = 0; d < a.length; d++) {
-      if (u + a[d].length > i && a[d].includes("{")) {
-        u = p(u, a[d]);
+      if (h + a[d].length > i && a[d].includes("{")) {
+        h = p(h, a[d]);
         continue;
       }
-      u + a[d].length > i && d !== 0 ? (o[o.length - 1] === " " && o.pop(), o.push(e), u = 0) : d !== 0 && (o.push(" "), u++), o.push(a[d]), u += a[d].length;
+      h + a[d].length > i && d !== 0 ? (o[o.length - 1] === " " && o.pop(), o.push(t), h = 0) : d !== 0 && (o.push(" "), h++), o.push(a[d]), h += a[d].length;
     }
     return o.join("");
   }
-  header(...e) {
-    for (let i = 0; i < e.length; i += 2)
-      typeof e[i] == "string" && typeof e[i + 1] == "string" && (this._header[e[i]] = e[i + 1]);
+  header(...t) {
+    for (let i = 0; i < t.length; i += 2)
+      typeof t[i] == "string" && typeof t[i + 1] == "string" && (this._header[t[i]] = t[i + 1]);
     return this._header;
   }
-  loadPgn(e, { strict: i = !1, newlineChar: o = `\r?
+  loadPgn(t, { strict: i = !1, newlineChar: o = `\r?
 ` } = {}) {
     function n(v) {
       return v.replace(/\\/g, "\\");
@@ -1314,21 +1228,21 @@ class ui {
       }
       return T;
     }
-    e = e.trim();
-    const a = new RegExp("^(\\[((?:" + n(o) + ")|.)*\\])((?:\\s*" + n(o) + "){2}|(?:\\s*" + n(o) + ")*$)").exec(e), l = a && a.length >= 2 ? a[1] : "";
+    t = t.trim();
+    const a = new RegExp("^(\\[((?:" + n(o) + ")|.)*\\])((?:\\s*" + n(o) + "){2}|(?:\\s*" + n(o) + ")*$)").exec(t), l = a && a.length >= 2 ? a[1] : "";
     this.reset();
     const c = r(l);
     let p = "";
     for (const v in c)
       v.toLowerCase() === "fen" && (p = c[v]), this.header(v, c[v]);
     if (!i)
-      p && this.load(p, { preserveHeaders: !0 });
+      p && this.load(p, !0);
     else if (c.SetUp === "1") {
       if (!("FEN" in c))
         throw new Error("Invalid PGN: FEN tag must be supplied with SetUp tag");
-      this.load(c.FEN, { preserveHeaders: !0 });
+      this.load(c.FEN, !0);
     }
-    function u(v) {
+    function h(v) {
       return Array.from(v).map(function(T) {
         return T.charCodeAt(0) < 128 ? T.charCodeAt(0).toString(16) : encodeURIComponent(T).replace(/%/g, "").toLowerCase();
       }).join("");
@@ -1336,17 +1250,17 @@ class ui {
     function d(v) {
       return v.length == 0 ? "" : decodeURIComponent("%" + (v.match(/.{1,2}/g) || []).join("%"));
     }
-    const h = function(v) {
-      return v = v.replace(new RegExp(n(o), "g"), " "), `{${u(v.slice(1, v.length - 1))}}`;
-    }, g = function(v) {
+    const u = function(v) {
+      return v = v.replace(new RegExp(n(o), "g"), " "), `{${h(v.slice(1, v.length - 1))}}`;
+    }, m = function(v) {
       if (v.startsWith("{") && v.endsWith("}"))
         return d(v.slice(1, v.length - 1));
     };
-    let f = e.replace(l, "").replace(
+    let f = t.replace(l, "").replace(
       // encode comments so they don't get deleted below
       new RegExp(`({[^}]*})+?|;([^${n(o)}]*)`, "g"),
       function(v, T, C) {
-        return T !== void 0 ? h(T) : " " + h(`{${C.slice(1)}}`);
+        return T !== void 0 ? u(T) : " " + u(`{${C.slice(1)}}`);
       }
     ).replace(new RegExp(n(o), "g"), " ");
     const y = /(\([^()]+\))+?/g;
@@ -1357,7 +1271,7 @@ class ui {
     S = S.filter((v) => v !== "");
     let k = "";
     for (let v = 0; v < S.length; v++) {
-      const T = g(S[v]);
+      const T = m(S[v]);
       if (T !== void 0) {
         this._comments[this.fen()] = T;
         continue;
@@ -1369,7 +1283,7 @@ class ui {
         else
           throw new Error(`Invalid move in PGN: ${S[v]}`);
       else
-        k = "", this._makeMove(C), this._incPositionCount(this.fen());
+        k = "", this._makeMove(C);
     }
     k && Object.keys(this._header).length && !this._header.Result && this.header("Result", k);
   }
@@ -1384,113 +1298,116 @@ class ui {
    * 4. ... Nge7 is overly disambiguated because the knight on c6 is pinned
    * 4. ... Ne7 is technically the valid SAN
    */
-  _moveToSan(e, i) {
+  _moveToSan(t, i) {
     let o = "";
-    if (e.flags & m.KSIDE_CASTLE)
+    if (t.flags & g.KSIDE_CASTLE)
       o = "O-O";
-    else if (e.flags & m.QSIDE_CASTLE)
+    else if (t.flags & g.QSIDE_CASTLE)
       o = "O-O-O";
     else {
-      if (e.piece !== M) {
-        const n = di(e, i);
-        o += e.piece.toUpperCase() + n;
+      if (t.piece !== E) {
+        const n = di(t, i);
+        o += t.piece.toUpperCase() + n;
       }
-      e.flags & (m.CAPTURE | m.EP_CAPTURE) && (e.piece === M && (o += N(e.from)[0]), o += "x"), o += N(e.to), e.promotion && (o += "=" + e.promotion.toUpperCase());
+      t.flags & (g.CAPTURE | g.EP_CAPTURE) && (t.piece === E && (o += I(t.from)[0]), o += "x"), o += I(t.to), t.promotion && (o += "=" + t.promotion.toUpperCase());
     }
-    return this._makeMove(e), this.isCheck() && (this.isCheckmate() ? o += "#" : o += "+"), this._undoMove(), o;
+    return this._makeMove(t), this.isCheck() && (this.isCheckmate() ? o += "#" : o += "+"), this._undoMove(), o;
   }
   // convert a move from Standard Algebraic Notation (SAN) to 0x88 coordinates
-  _moveFromSan(e, i = !1) {
-    const o = ye(e);
-    let n = Ge(o), r = this._moves({ legal: !0, piece: n });
-    for (let d = 0, h = r.length; d < h; d++)
-      if (o === ye(this._moveToSan(r[d], r)))
+  _moveFromSan(t, i = !1) {
+    const o = Pe(t);
+    let n = ze(o), r = this._moves({ legal: !0, piece: n });
+    for (let d = 0, u = r.length; d < u; d++)
+      if (o === Pe(this._moveToSan(r[d], r)))
         return r[d];
     if (i)
       return null;
-    let s, a, l, c, p, u = !1;
-    if (a = o.match(/([pnbrqkPNBRQK])?([a-h][1-8])x?-?([a-h][1-8])([qrbnQRBN])?/), a ? (s = a[1], l = a[2], c = a[3], p = a[4], l.length == 1 && (u = !0)) : (a = o.match(/([pnbrqkPNBRQK])?([a-h]?[1-8]?)x?-?([a-h][1-8])([qrbnQRBN])?/), a && (s = a[1], l = a[2], c = a[3], p = a[4], l.length == 1 && (u = !0))), n = Ge(o), r = this._moves({
+    let s, a, l, c, p, h = !1;
+    if (a = o.match(
+      /([pnbrqkPNBRQK])?([a-h][1-8])x?-?([a-h][1-8])([qrbnQRBN])?/
+      //     piece         from              to       promotion
+    ), a ? (s = a[1], l = a[2], c = a[3], p = a[4], l.length == 1 && (h = !0)) : (a = o.match(/([pnbrqkPNBRQK])?([a-h]?[1-8]?)x?-?([a-h][1-8])([qrbnQRBN])?/), a && (s = a[1], l = a[2], c = a[3], p = a[4], l.length == 1 && (h = !0))), n = ze(o), r = this._moves({
       legal: !0,
       piece: s || n
     }), !c)
       return null;
-    for (let d = 0, h = r.length; d < h; d++)
+    for (let d = 0, u = r.length; d < u; d++)
       if (l) {
         if ((!s || s.toLowerCase() == r[d].piece) && b[l] == r[d].from && b[c] == r[d].to && (!p || p.toLowerCase() == r[d].promotion))
           return r[d];
-        if (u) {
-          const g = N(r[d].from);
-          if ((!s || s.toLowerCase() == r[d].piece) && b[c] == r[d].to && (l == g[0] || l == g[1]) && (!p || p.toLowerCase() == r[d].promotion))
+        if (h) {
+          const m = I(r[d].from);
+          if ((!s || s.toLowerCase() == r[d].piece) && b[c] == r[d].to && (l == m[0] || l == m[1]) && (!p || p.toLowerCase() == r[d].promotion))
             return r[d];
         }
-      } else if (o === ye(this._moveToSan(r[d], r)).replace("x", ""))
+      } else if (o === Pe(this._moveToSan(r[d], r)).replace("x", ""))
         return r[d];
     return null;
   }
   ascii() {
-    let e = `   +------------------------+
+    let t = `   +------------------------+
 `;
     for (let i = b.a8; i <= b.h1; i++) {
-      if (ae(i) === 0 && (e += " " + "87654321"[J(i)] + " |"), this._board[i]) {
+      if (ae(i) === 0 && (t += " " + "87654321"[J(i)] + " |"), this._board[i]) {
         const o = this._board[i].type, r = this._board[i].color === A ? o.toUpperCase() : o.toLowerCase();
-        e += " " + r + " ";
+        t += " " + r + " ";
       } else
-        e += " . ";
-      i + 1 & 136 && (e += `|
+        t += " . ";
+      i + 1 & 136 && (t += `|
 `, i += 8);
     }
-    return e += `   +------------------------+
-`, e += "     a  b  c  d  e  f  g  h", e;
+    return t += `   +------------------------+
+`, t += "     a  b  c  d  e  f  g  h", t;
   }
-  perft(e) {
+  perft(t) {
     const i = this._moves({ legal: !1 });
     let o = 0;
     const n = this._turn;
     for (let r = 0, s = i.length; r < s; r++)
-      this._makeMove(i[r]), this._isKingAttacked(n) || (e - 1 > 0 ? o += this.perft(e - 1) : o++), this._undoMove();
+      this._makeMove(i[r]), this._isKingAttacked(n) || (t - 1 > 0 ? o += this.perft(t - 1) : o++), this._undoMove();
     return o;
   }
   // pretty = external move object
-  _makePretty(e) {
-    const { color: i, piece: o, from: n, to: r, flags: s, captured: a, promotion: l } = e;
+  _makePretty(t) {
+    const { color: i, piece: o, from: n, to: r, flags: s, captured: a, promotion: l } = t;
     let c = "";
-    for (const h in m)
-      m[h] & s && (c += Yt[h]);
-    const p = N(n), u = N(r), d = {
+    for (const u in g)
+      g[u] & s && (c += Yt[u]);
+    const p = I(n), h = I(r), d = {
       color: i,
       piece: o,
       from: p,
-      to: u,
-      san: this._moveToSan(e, this._moves({ legal: !0 })),
+      to: h,
+      san: this._moveToSan(t, this._moves({ legal: !0 })),
       flags: c,
-      lan: p + u,
+      lan: p + h,
       before: this.fen(),
       after: ""
     };
-    return this._makeMove(e), d.after = this.fen(), this._undoMove(), a && (d.captured = a), l && (d.promotion = l, d.lan += l), d;
+    return this._makeMove(t), d.after = this.fen(), this._undoMove(), a && (d.captured = a), l && (d.promotion = l, d.lan += l), d;
   }
   turn() {
     return this._turn;
   }
   board() {
-    const e = [];
+    const t = [];
     let i = [];
     for (let o = b.a8; o <= b.h1; o++)
       this._board[o] == null ? i.push(null) : i.push({
-        square: N(o),
+        square: I(o),
         type: this._board[o].type,
         color: this._board[o].color
-      }), o + 1 & 136 && (e.push(i), i = [], o += 8);
-    return e;
+      }), o + 1 & 136 && (t.push(i), i = [], o += 8);
+    return t;
   }
-  squareColor(e) {
-    if (e in b) {
-      const i = b[e];
+  squareColor(t) {
+    if (t in b) {
+      const i = b[t];
       return (J(i) + ae(i)) % 2 === 0 ? "light" : "dark";
     }
     return null;
   }
-  history({ verbose: e = !1 } = {}) {
+  history({ verbose: t = !1 } = {}) {
     const i = [], o = [];
     for (; this._history.length > 0; )
       i.push(this._undoMove());
@@ -1498,36 +1415,18 @@ class ui {
       const n = i.pop();
       if (!n)
         break;
-      e ? o.push(this._makePretty(n)) : o.push(this._moveToSan(n, this._moves())), this._makeMove(n);
+      t ? o.push(this._makePretty(n)) : o.push(this._moveToSan(n, this._moves())), this._makeMove(n);
     }
     return o;
   }
-  /*
-   * Keeps track of position occurrence counts for the purpose of repetition
-   * checking. All three methods (`_inc`, `_dec`, and `_get`) trim the
-   * irrelevent information from the fen, initialising new positions, and
-   * removing old positions from the record if their counts are reduced to 0.
-   */
-  _getPositionCount(e) {
-    const i = ke(e);
-    return this._positionCount[i] || 0;
-  }
-  _incPositionCount(e) {
-    const i = ke(e);
-    this._positionCount[i] === void 0 && (this._positionCount[i] = 0), this._positionCount[i] += 1;
-  }
-  _decPositionCount(e) {
-    const i = ke(e);
-    this._positionCount[i] === 1 ? delete this._positionCount[i] : this._positionCount[i] -= 1;
-  }
   _pruneComments() {
-    const e = [], i = {}, o = (n) => {
+    const t = [], i = {}, o = (n) => {
       n in this._comments && (i[n] = this._comments[n]);
     };
     for (; this._history.length > 0; )
-      e.push(this._undoMove());
+      t.push(this._undoMove());
     for (o(this.fen()); ; ) {
-      const n = e.pop();
+      const n = t.pop();
       if (!n)
         break;
       this._makeMove(n), o(this.fen());
@@ -1537,93 +1436,93 @@ class ui {
   getComment() {
     return this._comments[this.fen()];
   }
-  setComment(e) {
-    this._comments[this.fen()] = e.replace("{", "[").replace("}", "]");
+  setComment(t) {
+    this._comments[this.fen()] = t.replace("{", "[").replace("}", "]");
   }
   deleteComment() {
-    const e = this._comments[this.fen()];
-    return delete this._comments[this.fen()], e;
+    const t = this._comments[this.fen()];
+    return delete this._comments[this.fen()], t;
   }
   getComments() {
-    return this._pruneComments(), Object.keys(this._comments).map((e) => ({ fen: e, comment: this._comments[e] }));
+    return this._pruneComments(), Object.keys(this._comments).map((t) => ({ fen: t, comment: this._comments[t] }));
   }
   deleteComments() {
-    return this._pruneComments(), Object.keys(this._comments).map((e) => {
-      const i = this._comments[e];
-      return delete this._comments[e], { fen: e, comment: i };
+    return this._pruneComments(), Object.keys(this._comments).map((t) => {
+      const i = this._comments[t];
+      return delete this._comments[t], { fen: t, comment: i };
     });
   }
-  setCastlingRights(e, i) {
-    for (const n of [P, Q])
-      i[n] !== void 0 && (i[n] ? this._castling[e] |= he[n] : this._castling[e] &= ~he[n]);
+  setCastlingRights(t, i) {
+    for (const n of [M, Q])
+      i[n] !== void 0 && (i[n] ? this._castling[t] |= ue[n] : this._castling[t] &= ~ue[n]);
     this._updateCastlingRights();
-    const o = this.getCastlingRights(e);
-    return (i[P] === void 0 || i[P] === o[P]) && (i[Q] === void 0 || i[Q] === o[Q]);
+    const o = this.getCastlingRights(t);
+    return (i[M] === void 0 || i[M] === o[M]) && (i[Q] === void 0 || i[Q] === o[Q]);
   }
-  getCastlingRights(e) {
+  getCastlingRights(t) {
     return {
-      [P]: (this._castling[e] & he[P]) !== 0,
-      [Q]: (this._castling[e] & he[Q]) !== 0
+      [M]: (this._castling[t] & ue[M]) !== 0,
+      [Q]: (this._castling[t] & ue[Q]) !== 0
     };
   }
   moveNumber() {
     return this._moveNumber;
   }
 }
-function hi(t) {
-  const e = [];
-  for (const i of t)
-    e.push({ orig: i.to, brush: "yellow" }), i.captured && e.push({ orig: i.from, dest: i.to, brush: "red" }), i.san.includes("+") && e.push({ orig: i.from, dest: i.to, brush: "blue" });
-  return e;
+function ui(e) {
+  const t = [];
+  for (const i of e)
+    t.push({ orig: i.to, brush: "yellow" }), i.captured && t.push({ orig: i.from, dest: i.to, brush: "red" }), i.san.includes("+") && t.push({ orig: i.from, dest: i.to, brush: "blue" });
+  return t;
 }
-function fe(t) {
-  return t === "w" ? "white" : "black";
+function fe(e) {
+  return e === "w" ? "white" : "black";
 }
-function ze(t) {
-  const e = /* @__PURE__ */ new Map();
+function Ze(e) {
+  const t = /* @__PURE__ */ new Map();
   for (const i of Xt) {
-    const o = t.moves({ square: i, verbose: !0 });
-    o.length && e.set(
+    const o = e.moves({ square: i, verbose: !0 });
+    o.length && t.set(
       o[0].from,
       o.map((n) => n.to)
     );
   }
-  return e;
+  return t;
 }
-function fi(t, e) {
-  if (e?.type !== "p")
+function fi(e, t) {
+  if (t?.type !== "p")
     return !1;
-  const i = e?.color === "w" ? "8" : "1";
-  return t[1] === i;
+  const i = t?.color === "w" ? "8" : "1";
+  return e[1] === i;
 }
-function le(t) {
-  return !!t && t instanceof Object && !(t instanceof Array) && !(t instanceof Function);
+function le(e) {
+  return !!e && e instanceof Object && !(e instanceof Array) && !(e instanceof Function);
 }
-function me(t) {
-  return le(t) ? Object.fromEntries(
-    Object.entries(t).map(([e, i]) => [
-      e,
-      me(i)
+function ge(e) {
+  return le(e) ? Object.fromEntries(
+    Object.entries(e).map(([t, i]) => [
+      t,
+      ge(i)
     ])
-  ) : t;
+  ) : e;
 }
-function lt(t, e) {
-  const i = { ...t, ...e };
+function lt(e, t) {
+  const i = { ...e, ...t };
   for (const o in i)
-    i[o] = le(t?.[o]) && le(e?.[o]) ? lt(t[o], e[o]) : me(i[o]);
+    i[o] = le(e?.[o]) && le(t?.[o]) ? lt(e[o], t[o]) : ge(i[o]);
   return i;
 }
-function ct(t, e) {
+function ct(e, t) {
   const i = {};
-  for (const o in e)
-    if (le(t?.[o]) && le(e?.[o])) {
+  for (const o in t)
+    if (le(e?.[o]) && le(t?.[o])) {
       const n = ct(
-        t[o],
-        e[o]
+        e[o],
+        t[o]
       );
       Object.keys(n).length > 0 && (i[o] = n);
     } else
-      t?.[o] !== e[o] && (i[o] = e[o]);
+      e?.[o] !== t[o] && (i[o] = t[o]);
   return i;
 }
 const pi = {
@@ -1633,7 +1532,7 @@ const pi = {
   r: "rook",
   q: "queen",
   k: "king"
-}, gi = /* @__PURE__ */ new Map([
+}, mi = /* @__PURE__ */ new Map([
   ["b1", ["a3", "c3"]],
   ["g1", ["f3", "h3"]],
   ["a2", ["a3", "a4"]],
@@ -1644,8 +1543,8 @@ const pi = {
   ["f2", ["f3", "f4"]],
   ["g2", ["g3", "g4"]],
   ["h2", ["h3", "h4"]]
-]), mi = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", bi = {
-  fen: mi,
+]), gi = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", bi = {
+  fen: gi,
   orientation: "white",
   turnColor: "white",
   coordinates: !1,
@@ -1667,7 +1566,7 @@ const pi = {
     free: !1,
     color: "white",
     showDests: !0,
-    dests: gi,
+    dests: mi,
     // We need to specify movable.events.after as an empty function so that we always have something to patch
     // BoardApi.changeTurn onto. Other functions need to be specifed as undefined so that BoardApi.setConfig
     // can reset values back to undefined, eg. if the user calls BoardApi.setConfig({}, true).
@@ -1727,261 +1626,261 @@ const pi = {
       }
     }
   }
-}, vi = ["white", "black"], Oe = ["a", "b", "c", "d", "e", "f", "g", "h"], qe = ["1", "2", "3", "4", "5", "6", "7", "8"], _i = [...qe].reverse(), Re = Array.prototype.concat(...Oe.map((t) => qe.map((e) => t + e))), R = (t) => Re[8 * t[0] + t[1]], w = (t) => [t.charCodeAt(0) - 97, t.charCodeAt(1) - 49], dt = Re.map(w);
-function wi(t) {
-  let e;
-  const i = () => (e === void 0 && (e = t()), e);
+}, vi = ["white", "black"], be = ["a", "b", "c", "d", "e", "f", "g", "h"], ve = ["1", "2", "3", "4", "5", "6", "7", "8"], _i = [...ve].reverse(), Le = Array.prototype.concat(...be.map((e) => ve.map((t) => e + t))), R = (e) => Le[8 * e[0] + e[1]], w = (e) => [e.charCodeAt(0) - 97, e.charCodeAt(1) - 49], dt = Le.map(w);
+function wi(e) {
+  let t;
+  const i = () => (t === void 0 && (t = e()), t);
   return i.clear = () => {
-    e = void 0;
+    t = void 0;
   }, i;
 }
 const Si = () => {
-  let t;
+  let e;
   return {
     start() {
-      t = performance.now();
+      e = performance.now();
     },
     cancel() {
-      t = void 0;
+      e = void 0;
     },
     stop() {
-      if (!t)
+      if (!e)
         return 0;
-      const e = performance.now() - t;
-      return t = void 0, e;
+      const t = performance.now() - e;
+      return e = void 0, t;
     }
   };
-}, Le = (t) => t === "white" ? "black" : "white", ce = (t, e) => {
-  const i = t[0] - e[0], o = t[1] - e[1];
+}, Ke = (e) => e === "white" ? "black" : "white", ce = (e, t) => {
+  const i = e[0] - t[0], o = e[1] - t[1];
   return i * i + o * o;
-}, Ne = (t, e) => t.role === e.role && t.color === e.color, de = (t) => (e, i) => [
-  (i ? e[0] : 7 - e[0]) * t.width / 8,
-  (i ? 7 - e[1] : e[1]) * t.height / 8
-], F = (t, e) => {
-  t.style.transform = `translate(${e[0]}px,${e[1]}px)`;
-}, ut = (t, e, i = 1) => {
-  t.style.transform = `translate(${e[0]}px,${e[1]}px) scale(${i})`;
-}, Ke = (t, e) => {
-  t.style.visibility = e ? "visible" : "hidden";
-}, te = (t) => {
-  var e;
-  if (t.clientX || t.clientX === 0)
-    return [t.clientX, t.clientY];
-  if (!((e = t.targetTouches) === null || e === void 0) && e[0])
-    return [t.targetTouches[0].clientX, t.targetTouches[0].clientY];
-}, ht = (t) => t.buttons === 2 || t.button === 2, H = (t, e) => {
-  const i = document.createElement(t);
-  return e && (i.className = e), i;
+}, qe = (e, t) => e.role === t.role && e.color === t.color, de = (e) => (t, i) => [
+  (i ? t[0] : 7 - t[0]) * e.width / 8,
+  (i ? 7 - t[1] : t[1]) * e.height / 8
+], B = (e, t) => {
+  e.style.transform = `translate(${t[0]}px,${t[1]}px)`;
+}, ht = (e, t, i = 1) => {
+  e.style.transform = `translate(${t[0]}px,${t[1]}px) scale(${i})`;
+}, $e = (e, t) => {
+  e.style.visibility = t ? "visible" : "hidden";
+}, te = (e) => {
+  var t;
+  if (e.clientX || e.clientX === 0)
+    return [e.clientX, e.clientY];
+  if (!((t = e.targetTouches) === null || t === void 0) && t[0])
+    return [e.targetTouches[0].clientX, e.targetTouches[0].clientY];
+}, ut = (e) => e.button === 2, H = (e, t) => {
+  const i = document.createElement(e);
+  return t && (i.className = t), i;
 };
-function ft(t, e, i) {
-  const o = w(t);
-  return e || (o[0] = 7 - o[0], o[1] = 7 - o[1]), [
+function ft(e, t, i) {
+  const o = w(e);
+  return t || (o[0] = 7 - o[0], o[1] = 7 - o[1]), [
     i.left + i.width * o[0] / 8 + i.width / 16,
     i.top + i.height * (7 - o[1]) / 8 + i.height / 16
   ];
 }
-const ee = (t, e) => Math.abs(t - e), yi = (t) => (e, i, o, n) => ee(e, o) < 2 && (t === "white" ? (
+const ee = (e, t) => Math.abs(e - t), yi = (e) => (t, i, o, n) => ee(t, o) < 2 && (e === "white" ? (
   // allow 2 squares from first two ranks, for horde
-  n === i + 1 || i <= 1 && n === i + 2 && e === o
-) : n === i - 1 || i >= 6 && n === i - 2 && e === o), pt = (t, e, i, o) => {
-  const n = ee(t, i), r = ee(e, o);
+  n === i + 1 || i <= 1 && n === i + 2 && t === o
+) : n === i - 1 || i >= 6 && n === i - 2 && t === o), pt = (e, t, i, o) => {
+  const n = ee(e, i), r = ee(t, o);
   return n === 1 && r === 2 || n === 2 && r === 1;
-}, gt = (t, e, i, o) => ee(t, i) === ee(e, o), mt = (t, e, i, o) => t === i || e === o, bt = (t, e, i, o) => gt(t, e, i, o) || mt(t, e, i, o), ki = (t, e, i) => (o, n, r, s) => ee(o, r) < 2 && ee(n, s) < 2 || i && n === s && n === (t === "white" ? 0 : 7) && (o === 4 && (r === 2 && e.includes(0) || r === 6 && e.includes(7)) || e.includes(r));
-function Ci(t, e) {
-  const i = e === "white" ? "1" : "8", o = [];
-  for (const [n, r] of t)
-    n[1] === i && r.color === e && r.role === "rook" && o.push(w(n)[0]);
+}, mt = (e, t, i, o) => ee(e, i) === ee(t, o), gt = (e, t, i, o) => e === i || t === o, bt = (e, t, i, o) => mt(e, t, i, o) || gt(e, t, i, o), ki = (e, t, i) => (o, n, r, s) => ee(o, r) < 2 && ee(n, s) < 2 || i && n === s && n === (e === "white" ? 0 : 7) && (o === 4 && (r === 2 && t.includes(0) || r === 6 && t.includes(7)) || t.includes(r));
+function Ci(e, t) {
+  const i = t === "white" ? "1" : "8", o = [];
+  for (const [n, r] of e)
+    n[1] === i && r.color === t && r.role === "rook" && o.push(w(n)[0]);
   return o;
 }
-function vt(t, e, i) {
-  const o = t.get(e);
+function vt(e, t, i) {
+  const o = e.get(t);
   if (!o)
     return [];
-  const n = w(e), r = o.role, s = r === "pawn" ? yi(o.color) : r === "knight" ? pt : r === "bishop" ? gt : r === "rook" ? mt : r === "queen" ? bt : ki(o.color, Ci(t, o.color), i);
+  const n = w(t), r = o.role, s = r === "pawn" ? yi(o.color) : r === "knight" ? pt : r === "bishop" ? mt : r === "rook" ? gt : r === "queen" ? bt : ki(o.color, Ci(e, o.color), i);
   return dt.filter((a) => (n[0] !== a[0] || n[1] !== a[1]) && s(n[0], n[1], a[0], a[1])).map(R);
 }
-function D(t, ...e) {
-  t && setTimeout(() => t(...e), 1);
+function D(e, ...t) {
+  e && setTimeout(() => e(...t), 1);
 }
-function Pi(t) {
-  t.orientation = Le(t.orientation), t.animation.current = t.draggable.current = t.selected = void 0;
+function Pi(e) {
+  e.orientation = Ke(e.orientation), e.animation.current = e.draggable.current = e.selected = void 0;
 }
-function Ei(t, e) {
-  for (const [i, o] of e)
-    o ? t.pieces.set(i, o) : t.pieces.delete(i);
+function Ei(e, t) {
+  for (const [i, o] of t)
+    o ? e.pieces.set(i, o) : e.pieces.delete(i);
 }
-function Mi(t, e) {
-  if (t.check = void 0, e === !0 && (e = t.turnColor), e)
-    for (const [i, o] of t.pieces)
-      o.role === "king" && o.color === e && (t.check = i);
+function Mi(e, t) {
+  if (e.check = void 0, t === !0 && (t = e.turnColor), t)
+    for (const [i, o] of e.pieces)
+      o.role === "king" && o.color === t && (e.check = i);
 }
-function Ti(t, e, i, o) {
-  z(t), t.premovable.current = [e, i], D(t.premovable.events.set, e, i, o);
+function Ti(e, t, i, o) {
+  z(e), e.premovable.current = [t, i], D(e.premovable.events.set, t, i, o);
 }
-function G(t) {
-  t.premovable.current && (t.premovable.current = void 0, D(t.premovable.events.unset));
+function G(e) {
+  e.premovable.current && (e.premovable.current = void 0, D(e.premovable.events.unset));
 }
-function Ai(t, e, i) {
-  G(t), t.predroppable.current = { role: e, key: i }, D(t.predroppable.events.set, e, i);
+function Ai(e, t, i) {
+  G(e), e.predroppable.current = { role: t, key: i }, D(e.predroppable.events.set, t, i);
 }
-function z(t) {
-  const e = t.predroppable;
-  e.current && (e.current = void 0, D(e.events.unset));
+function z(e) {
+  const t = e.predroppable;
+  t.current && (t.current = void 0, D(t.events.unset));
 }
-function Ni(t, e, i) {
-  if (!t.autoCastle)
+function xi(e, t, i) {
+  if (!e.autoCastle)
     return !1;
-  const o = t.pieces.get(e);
+  const o = e.pieces.get(t);
   if (!o || o.role !== "king")
     return !1;
-  const n = w(e), r = w(i);
+  const n = w(t), r = w(i);
   if (n[1] !== 0 && n[1] !== 7 || n[1] !== r[1])
     return !1;
-  n[0] === 4 && !t.pieces.has(i) && (r[0] === 6 ? i = R([7, r[1]]) : r[0] === 2 && (i = R([0, r[1]])));
-  const s = t.pieces.get(i);
-  return !s || s.color !== o.color || s.role !== "rook" ? !1 : (t.pieces.delete(e), t.pieces.delete(i), n[0] < r[0] ? (t.pieces.set(R([6, r[1]]), o), t.pieces.set(R([5, r[1]]), s)) : (t.pieces.set(R([2, r[1]]), o), t.pieces.set(R([3, r[1]]), s)), !0);
+  n[0] === 4 && !e.pieces.has(i) && (r[0] === 6 ? i = R([7, r[1]]) : r[0] === 2 && (i = R([0, r[1]])));
+  const s = e.pieces.get(i);
+  return !s || s.color !== o.color || s.role !== "rook" ? !1 : (e.pieces.delete(t), e.pieces.delete(i), n[0] < r[0] ? (e.pieces.set(R([6, r[1]]), o), e.pieces.set(R([5, r[1]]), s)) : (e.pieces.set(R([2, r[1]]), o), e.pieces.set(R([3, r[1]]), s)), !0);
 }
-function _t(t, e, i) {
-  const o = t.pieces.get(e), n = t.pieces.get(i);
-  if (e === i || !o)
+function _t(e, t, i) {
+  const o = e.pieces.get(t), n = e.pieces.get(i);
+  if (t === i || !o)
     return !1;
   const r = n && n.color !== o.color ? n : void 0;
-  return i === t.selected && L(t), D(t.events.move, e, i, r), Ni(t, e, i) || (t.pieces.set(i, o), t.pieces.delete(e)), t.lastMove = [e, i], t.check = void 0, D(t.events.change), r || !0;
+  return i === e.selected && L(e), D(e.events.move, t, i, r), xi(e, t, i) || (e.pieces.set(i, o), e.pieces.delete(t)), e.lastMove = [t, i], e.check = void 0, D(e.events.change), r || !0;
 }
-function $e(t, e, i, o) {
-  if (t.pieces.has(i))
+function Be(e, t, i, o) {
+  if (e.pieces.has(i))
     if (o)
-      t.pieces.delete(i);
+      e.pieces.delete(i);
     else
       return !1;
-  return D(t.events.dropNewPiece, e, i), t.pieces.set(i, e), t.lastMove = [i], t.check = void 0, D(t.events.change), t.movable.dests = void 0, t.turnColor = Le(t.turnColor), !0;
+  return D(e.events.dropNewPiece, t, i), e.pieces.set(i, t), e.lastMove = [i], e.check = void 0, D(e.events.change), e.movable.dests = void 0, e.turnColor = Ke(e.turnColor), !0;
 }
-function wt(t, e, i) {
-  const o = _t(t, e, i);
-  return o && (t.movable.dests = void 0, t.turnColor = Le(t.turnColor), t.animation.current = void 0), o;
+function wt(e, t, i) {
+  const o = _t(e, t, i);
+  return o && (e.movable.dests = void 0, e.turnColor = Ke(e.turnColor), e.animation.current = void 0), o;
 }
-function St(t, e, i) {
-  if (Fe(t, e, i)) {
-    const o = wt(t, e, i);
+function St(e, t, i) {
+  if (We(e, t, i)) {
+    const o = wt(e, t, i);
     if (o) {
-      const n = t.hold.stop();
-      L(t);
+      const n = e.hold.stop();
+      L(e);
       const r = {
         premove: !1,
-        ctrlKey: t.stats.ctrlKey,
+        ctrlKey: e.stats.ctrlKey,
         holdTime: n
       };
-      return o !== !0 && (r.captured = o), D(t.movable.events.after, e, i, r), !0;
+      return o !== !0 && (r.captured = o), D(e.movable.events.after, t, i, r), !0;
     }
-  } else if (xi(t, e, i))
-    return Ti(t, e, i, {
-      ctrlKey: t.stats.ctrlKey
-    }), L(t), !0;
-  return L(t), !1;
+  } else if (Oi(e, t, i))
+    return Ti(e, t, i, {
+      ctrlKey: e.stats.ctrlKey
+    }), L(e), !0;
+  return L(e), !1;
 }
-function yt(t, e, i, o) {
-  const n = t.pieces.get(e);
-  n && (Ii(t, e, i) || o) ? (t.pieces.delete(e), $e(t, n, i, o), D(t.movable.events.afterNewPiece, n.role, i, {
+function yt(e, t, i, o) {
+  const n = e.pieces.get(t);
+  n && (Di(e, t, i) || o) ? (e.pieces.delete(t), Be(e, n, i, o), D(e.movable.events.afterNewPiece, n.role, i, {
     premove: !1,
     predrop: !1
-  })) : n && Di(t, e, i) ? Ai(t, n.role, i) : (G(t), z(t)), t.pieces.delete(e), L(t);
+  })) : n && qi(e, t, i) ? Ai(e, n.role, i) : (G(e), z(e)), e.pieces.delete(t), L(e);
 }
-function Ie(t, e, i) {
-  if (D(t.events.select, e), t.selected) {
-    if (t.selected === e && !t.draggable.enabled) {
-      L(t), t.hold.cancel();
+function Ie(e, t, i) {
+  if (D(e.events.select, t), e.selected) {
+    if (e.selected === t && !e.draggable.enabled) {
+      L(e), e.hold.cancel();
       return;
-    } else if ((t.selectable.enabled || i) && t.selected !== e && St(t, t.selected, e)) {
-      t.stats.dragged = !1;
+    } else if ((e.selectable.enabled || i) && e.selected !== t && St(e, e.selected, t)) {
+      e.stats.dragged = !1;
       return;
     }
   }
-  (t.selectable.enabled || t.draggable.enabled) && (Ct(t, e) || Be(t, e)) && (kt(t, e), t.hold.start());
+  (e.selectable.enabled || e.draggable.enabled) && (Ct(e, t) || He(e, t)) && (kt(e, t), e.hold.start());
 }
-function kt(t, e) {
-  t.selected = e, Be(t, e) ? t.premovable.customDests || (t.premovable.dests = vt(t.pieces, e, t.premovable.castle)) : t.premovable.dests = void 0;
+function kt(e, t) {
+  e.selected = t, He(e, t) ? e.premovable.customDests || (e.premovable.dests = vt(e.pieces, t, e.premovable.castle)) : e.premovable.dests = void 0;
 }
-function L(t) {
-  t.selected = void 0, t.premovable.dests = void 0, t.hold.cancel();
+function L(e) {
+  e.selected = void 0, e.premovable.dests = void 0, e.hold.cancel();
 }
-function Ct(t, e) {
-  const i = t.pieces.get(e);
-  return !!i && (t.movable.color === "both" || t.movable.color === i.color && t.turnColor === i.color);
+function Ct(e, t) {
+  const i = e.pieces.get(t);
+  return !!i && (e.movable.color === "both" || e.movable.color === i.color && e.turnColor === i.color);
 }
-const Fe = (t, e, i) => {
+const We = (e, t, i) => {
   var o, n;
-  return e !== i && Ct(t, e) && (t.movable.free || !!(!((n = (o = t.movable.dests) === null || o === void 0 ? void 0 : o.get(e)) === null || n === void 0) && n.includes(i)));
+  return t !== i && Ct(e, t) && (e.movable.free || !!(!((n = (o = e.movable.dests) === null || o === void 0 ? void 0 : o.get(t)) === null || n === void 0) && n.includes(i)));
 };
-function Ii(t, e, i) {
-  const o = t.pieces.get(e);
-  return !!o && (e === i || !t.pieces.has(i)) && (t.movable.color === "both" || t.movable.color === o.color && t.turnColor === o.color);
+function Di(e, t, i) {
+  const o = e.pieces.get(t);
+  return !!o && (t === i || !e.pieces.has(i)) && (e.movable.color === "both" || e.movable.color === o.color && e.turnColor === o.color);
 }
-function Be(t, e) {
-  const i = t.pieces.get(e);
-  return !!i && t.premovable.enabled && t.movable.color === i.color && t.turnColor !== i.color;
+function He(e, t) {
+  const i = e.pieces.get(t);
+  return !!i && e.premovable.enabled && e.movable.color === i.color && e.turnColor !== i.color;
 }
-function xi(t, e, i) {
+function Oi(e, t, i) {
   var o, n;
-  const r = (n = (o = t.premovable.customDests) === null || o === void 0 ? void 0 : o.get(e)) !== null && n !== void 0 ? n : vt(t.pieces, e, t.premovable.castle);
-  return e !== i && Be(t, e) && r.includes(i);
+  const r = (n = (o = e.premovable.customDests) === null || o === void 0 ? void 0 : o.get(t)) !== null && n !== void 0 ? n : vt(e.pieces, t, e.premovable.castle);
+  return t !== i && He(e, t) && r.includes(i);
 }
-function Di(t, e, i) {
-  const o = t.pieces.get(e), n = t.pieces.get(i);
-  return !!o && (!n || n.color !== t.movable.color) && t.predroppable.enabled && (o.role !== "pawn" || i[1] !== "1" && i[1] !== "8") && t.movable.color === o.color && t.turnColor !== o.color;
+function qi(e, t, i) {
+  const o = e.pieces.get(t), n = e.pieces.get(i);
+  return !!o && (!n || n.color !== e.movable.color) && e.predroppable.enabled && (o.role !== "pawn" || i[1] !== "1" && i[1] !== "8") && e.movable.color === o.color && e.turnColor !== o.color;
 }
-function Oi(t, e) {
-  const i = t.pieces.get(e);
-  return !!i && t.draggable.enabled && (t.movable.color === "both" || t.movable.color === i.color && (t.turnColor === i.color || t.premovable.enabled));
+function Ii(e, t) {
+  const i = e.pieces.get(t);
+  return !!i && e.draggable.enabled && (e.movable.color === "both" || e.movable.color === i.color && (e.turnColor === i.color || e.premovable.enabled));
 }
-function qi(t) {
-  const e = t.premovable.current;
-  if (!e)
+function Ni(e) {
+  const t = e.premovable.current;
+  if (!t)
     return !1;
-  const i = e[0], o = e[1];
+  const i = t[0], o = t[1];
   let n = !1;
-  if (Fe(t, i, o)) {
-    const r = wt(t, i, o);
+  if (We(e, i, o)) {
+    const r = wt(e, i, o);
     if (r) {
       const s = { premove: !0 };
-      r !== !0 && (s.captured = r), D(t.movable.events.after, i, o, s), n = !0;
+      r !== !0 && (s.captured = r), D(e.movable.events.after, i, o, s), n = !0;
     }
   }
-  return G(t), n;
+  return G(e), n;
 }
-function Ri(t, e) {
-  const i = t.predroppable.current;
+function Ri(e, t) {
+  const i = e.predroppable.current;
   let o = !1;
   if (!i)
     return !1;
-  if (e(i)) {
+  if (t(i)) {
     const n = {
       role: i.role,
-      color: t.movable.color
+      color: e.movable.color
     };
-    $e(t, n, i.key) && (D(t.movable.events.afterNewPiece, i.role, i.key, {
+    Be(e, n, i.key) && (D(e.movable.events.afterNewPiece, i.role, i.key, {
       premove: !1,
       predrop: !0
     }), o = !0);
   }
-  return z(t), o;
+  return z(e), o;
 }
-function He(t) {
-  G(t), z(t), L(t);
+function Ve(e) {
+  G(e), z(e), L(e);
 }
-function Ze(t) {
-  t.movable.color = t.movable.dests = t.animation.current = void 0, He(t);
+function Ye(e) {
+  e.movable.color = e.movable.dests = e.animation.current = void 0, Ve(e);
 }
-function ie(t, e, i) {
-  let o = Math.floor(8 * (t[0] - i.left) / i.width);
-  e || (o = 7 - o);
-  let n = 7 - Math.floor(8 * (t[1] - i.top) / i.height);
-  return e || (n = 7 - n), o >= 0 && o < 8 && n >= 0 && n < 8 ? R([o, n]) : void 0;
+function ie(e, t, i) {
+  let o = Math.floor(8 * (e[0] - i.left) / i.width);
+  t || (o = 7 - o);
+  let n = 7 - Math.floor(8 * (e[1] - i.top) / i.height);
+  return t || (n = 7 - n), o >= 0 && o < 8 && n >= 0 && n < 8 ? R([o, n]) : void 0;
 }
-function Li(t, e, i, o) {
-  const n = w(t), r = dt.filter((c) => bt(n[0], n[1], c[0], c[1]) || pt(n[0], n[1], c[0], c[1])), a = r.map((c) => ft(R(c), i, o)).map((c) => ce(e, c)), [, l] = a.reduce((c, p, u) => c[0] < p ? c : [p, u], [a[0], 0]);
+function Li(e, t, i, o) {
+  const n = w(e), r = dt.filter((c) => bt(n[0], n[1], c[0], c[1]) || pt(n[0], n[1], c[0], c[1])), a = r.map((c) => ft(R(c), i, o)).map((c) => ce(t, c)), [, l] = a.reduce((c, p, h) => c[0] < p ? c : [p, h], [a[0], 0]);
   return R(r[l]);
 }
-const O = (t) => t.orientation === "white", Pt = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR", Ki = {
+const O = (e) => e.orientation === "white", Pt = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR", Ki = {
   p: "pawn",
   r: "rook",
   n: "knight",
@@ -1996,22 +1895,22 @@ const O = (t) => t.orientation === "white", Pt = "rnbqkbnr/pppppppp/8/8/8/8/PPPP
   queen: "q",
   king: "k"
 };
-function Et(t) {
-  t === "start" && (t = Pt);
-  const e = /* @__PURE__ */ new Map();
+function Et(e) {
+  e === "start" && (e = Pt);
+  const t = /* @__PURE__ */ new Map();
   let i = 7, o = 0;
-  for (const n of t)
+  for (const n of e)
     switch (n) {
       case " ":
       case "[":
-        return e;
+        return t;
       case "/":
         if (--i, i < 0)
-          return e;
+          return t;
         o = 0;
         break;
       case "~": {
-        const r = e.get(R([o - 1, i]));
+        const r = t.get(R([o - 1, i]));
         r && (r.promoted = !0);
         break;
       }
@@ -2021,350 +1920,350 @@ function Et(t) {
           o += r - 48;
         else {
           const s = n.toLowerCase();
-          e.set(R([o, i]), {
+          t.set(R([o, i]), {
             role: Ki[s],
             color: n === s ? "black" : "white"
           }), ++o;
         }
       }
     }
-  return e;
+  return t;
 }
-function Fi(t) {
-  return _i.map((e) => Oe.map((i) => {
-    const o = t.get(i + e);
+function Bi(e) {
+  return _i.map((t) => be.map((i) => {
+    const o = e.get(i + t);
     if (o) {
       let n = $i[o.role];
       return o.color === "white" && (n = n.toUpperCase()), o.promoted && (n += "~"), n;
     } else
       return "1";
-  }).join("")).join("/").replace(/1{2,}/g, (e) => e.length.toString());
+  }).join("")).join("/").replace(/1{2,}/g, (t) => t.length.toString());
 }
-function Mt(t, e) {
-  e.animation && (Ve(t.animation, e.animation), (t.animation.duration || 0) < 70 && (t.animation.enabled = !1));
+function Mt(e, t) {
+  t.animation && (je(e.animation, t.animation), (e.animation.duration || 0) < 70 && (e.animation.enabled = !1));
 }
-function Tt(t, e) {
+function Tt(e, t) {
   var i, o, n;
-  if (!((i = e.movable) === null || i === void 0) && i.dests && (t.movable.dests = void 0), !((o = e.drawable) === null || o === void 0) && o.autoShapes && (t.drawable.autoShapes = []), Ve(t, e), e.fen && (t.pieces = Et(e.fen), t.drawable.shapes = ((n = e.drawable) === null || n === void 0 ? void 0 : n.shapes) || []), "check" in e && Mi(t, e.check || !1), "lastMove" in e && !e.lastMove ? t.lastMove = void 0 : e.lastMove && (t.lastMove = e.lastMove), t.selected && kt(t, t.selected), Mt(t, e), !t.movable.rookCastle && t.movable.dests) {
-    const r = t.movable.color === "white" ? "1" : "8", s = "e" + r, a = t.movable.dests.get(s), l = t.pieces.get(s);
+  if (!((i = t.movable) === null || i === void 0) && i.dests && (e.movable.dests = void 0), !((o = t.drawable) === null || o === void 0) && o.autoShapes && (e.drawable.autoShapes = []), je(e, t), t.fen && (e.pieces = Et(t.fen), e.drawable.shapes = ((n = t.drawable) === null || n === void 0 ? void 0 : n.shapes) || []), "check" in t && Mi(e, t.check || !1), "lastMove" in t && !t.lastMove ? e.lastMove = void 0 : t.lastMove && (e.lastMove = t.lastMove), e.selected && kt(e, e.selected), Mt(e, t), !e.movable.rookCastle && e.movable.dests) {
+    const r = e.movable.color === "white" ? "1" : "8", s = "e" + r, a = e.movable.dests.get(s), l = e.pieces.get(s);
     if (!a || !l || l.role !== "king")
       return;
-    t.movable.dests.set(s, a.filter((c) => !(c === "a" + r && a.includes("c" + r)) && !(c === "h" + r && a.includes("g" + r))));
+    e.movable.dests.set(s, a.filter((c) => !(c === "a" + r && a.includes("c" + r)) && !(c === "h" + r && a.includes("g" + r))));
   }
 }
-function Ve(t, e) {
-  for (const i in e)
-    Object.prototype.hasOwnProperty.call(e, i) && (Object.prototype.hasOwnProperty.call(t, i) && Ye(t[i]) && Ye(e[i]) ? Ve(t[i], e[i]) : t[i] = e[i]);
+function je(e, t) {
+  for (const i in t)
+    Object.prototype.hasOwnProperty.call(t, i) && (Object.prototype.hasOwnProperty.call(e, i) && Xe(e[i]) && Xe(t[i]) ? je(e[i], t[i]) : e[i] = t[i]);
 }
-function Ye(t) {
-  if (typeof t != "object" || t === null)
+function Xe(e) {
+  if (typeof e != "object" || e === null)
     return !1;
-  const e = Object.getPrototypeOf(t);
-  return e === Object.prototype || e === null;
+  const t = Object.getPrototypeOf(e);
+  return t === Object.prototype || t === null;
 }
-const X = (t, e) => e.animation.enabled ? Vi(t, e) : U(t, e);
-function U(t, e) {
-  const i = t(e);
-  return e.dom.redraw(), i;
+const X = (e, t) => t.animation.enabled ? Vi(e, t) : U(e, t);
+function U(e, t) {
+  const i = e(t);
+  return t.dom.redraw(), i;
 }
-const Ce = (t, e) => ({
-  key: t,
-  pos: w(t),
-  piece: e
-}), Bi = (t, e) => e.sort((i, o) => ce(t.pos, i.pos) - ce(t.pos, o.pos))[0];
-function Hi(t, e) {
+const Ee = (e, t) => ({
+  key: e,
+  pos: w(e),
+  piece: t
+}), Wi = (e, t) => t.sort((i, o) => ce(e.pos, i.pos) - ce(e.pos, o.pos))[0];
+function Hi(e, t) {
   const i = /* @__PURE__ */ new Map(), o = [], n = /* @__PURE__ */ new Map(), r = [], s = [], a = /* @__PURE__ */ new Map();
   let l, c, p;
-  for (const [u, d] of t)
-    a.set(u, Ce(u, d));
-  for (const u of Re)
-    l = e.pieces.get(u), c = a.get(u), l ? c ? Ne(l, c.piece) || (r.push(c), s.push(Ce(u, l))) : s.push(Ce(u, l)) : c && r.push(c);
-  for (const u of s)
-    c = Bi(u, r.filter((d) => Ne(u.piece, d.piece))), c && (p = [c.pos[0] - u.pos[0], c.pos[1] - u.pos[1]], i.set(u.key, p.concat(p)), o.push(c.key));
-  for (const u of r)
-    o.includes(u.key) || n.set(u.key, u.piece);
+  for (const [h, d] of e)
+    a.set(h, Ee(h, d));
+  for (const h of Le)
+    l = t.pieces.get(h), c = a.get(h), l ? c ? qe(l, c.piece) || (r.push(c), s.push(Ee(h, l))) : s.push(Ee(h, l)) : c && r.push(c);
+  for (const h of s)
+    c = Wi(h, r.filter((d) => qe(h.piece, d.piece))), c && (p = [c.pos[0] - h.pos[0], c.pos[1] - h.pos[1]], i.set(h.key, p.concat(p)), o.push(c.key));
+  for (const h of r)
+    o.includes(h.key) || n.set(h.key, h.piece);
   return {
     anims: i,
     fadings: n
   };
 }
-function At(t, e) {
-  const i = t.animation.current;
+function At(e, t) {
+  const i = e.animation.current;
   if (i === void 0) {
-    t.dom.destroyed || t.dom.redrawNow();
+    e.dom.destroyed || e.dom.redrawNow();
     return;
   }
-  const o = 1 - (e - i.start) * i.frequency;
+  const o = 1 - (t - i.start) * i.frequency;
   if (o <= 0)
-    t.animation.current = void 0, t.dom.redrawNow();
+    e.animation.current = void 0, e.dom.redrawNow();
   else {
-    const n = Wi(o);
+    const n = ji(o);
     for (const r of i.plan.anims.values())
       r[2] = r[0] * n, r[3] = r[1] * n;
-    t.dom.redrawNow(!0), requestAnimationFrame((r = performance.now()) => At(t, r));
+    e.dom.redrawNow(!0), requestAnimationFrame((r = performance.now()) => At(e, r));
   }
 }
-function Vi(t, e) {
-  const i = new Map(e.pieces), o = t(e), n = Hi(i, e);
+function Vi(e, t) {
+  const i = new Map(t.pieces), o = e(t), n = Hi(i, t);
   if (n.anims.size || n.fadings.size) {
-    const r = e.animation.current && e.animation.current.start;
-    e.animation.current = {
+    const r = t.animation.current && t.animation.current.start;
+    t.animation.current = {
       start: performance.now(),
-      frequency: 1 / e.animation.duration,
+      frequency: 1 / t.animation.duration,
       plan: n
-    }, r || At(e, performance.now());
+    }, r || At(t, performance.now());
   } else
-    e.dom.redraw();
+    t.dom.redraw();
   return o;
 }
-const Wi = (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1, ji = ["green", "red", "blue", "yellow"];
-function Ui(t, e) {
-  if (e.touches && e.touches.length > 1)
+const ji = (e) => e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1, Fi = ["green", "red", "blue", "yellow"];
+function Ui(e, t) {
+  if (t.touches && t.touches.length > 1)
     return;
-  e.stopPropagation(), e.preventDefault(), e.ctrlKey ? L(t) : He(t);
-  const i = te(e), o = ie(i, O(t), t.dom.bounds());
-  o && (t.drawable.current = {
+  t.stopPropagation(), t.preventDefault(), t.ctrlKey ? L(e) : Ve(e);
+  const i = te(t), o = ie(i, O(e), e.dom.bounds());
+  o && (e.drawable.current = {
     orig: o,
     pos: i,
-    brush: Zi(e),
-    snapToValidMove: t.drawable.defaultSnapToValidMove
-  }, Nt(t));
+    brush: Zi(t),
+    snapToValidMove: e.drawable.defaultSnapToValidMove
+  }, xt(e));
 }
-function Nt(t) {
+function xt(e) {
   requestAnimationFrame(() => {
-    const e = t.drawable.current;
-    if (e) {
-      const i = ie(e.pos, O(t), t.dom.bounds());
-      i || (e.snapToValidMove = !1);
-      const o = e.snapToValidMove ? Li(e.orig, e.pos, O(t), t.dom.bounds()) : i;
-      o !== e.mouseSq && (e.mouseSq = o, e.dest = o !== e.orig ? o : void 0, t.dom.redrawNow()), Nt(t);
+    const t = e.drawable.current;
+    if (t) {
+      const i = ie(t.pos, O(e), e.dom.bounds());
+      i || (t.snapToValidMove = !1);
+      const o = t.snapToValidMove ? Li(t.orig, t.pos, O(e), e.dom.bounds()) : i;
+      o !== t.mouseSq && (t.mouseSq = o, t.dest = o !== t.orig ? o : void 0, e.dom.redrawNow()), xt(e);
     }
   });
 }
-function Qi(t, e) {
-  t.drawable.current && (t.drawable.current.pos = te(e));
+function Qi(e, t) {
+  e.drawable.current && (e.drawable.current.pos = te(t));
 }
-function Gi(t) {
-  const e = t.drawable.current;
-  e && (e.mouseSq && Yi(t.drawable, e), It(t));
+function Gi(e) {
+  const t = e.drawable.current;
+  t && (t.mouseSq && Yi(e.drawable, t), Dt(e));
 }
-function It(t) {
-  t.drawable.current && (t.drawable.current = void 0, t.dom.redraw());
+function Dt(e) {
+  e.drawable.current && (e.drawable.current = void 0, e.dom.redraw());
 }
-function zi(t) {
-  t.drawable.shapes.length && (t.drawable.shapes = [], t.dom.redraw(), xt(t.drawable));
+function zi(e) {
+  e.drawable.shapes.length && (e.drawable.shapes = [], e.dom.redraw(), Ot(e.drawable));
 }
-function Zi(t) {
-  var e;
-  const i = (t.shiftKey || t.ctrlKey) && ht(t), o = t.altKey || t.metaKey || ((e = t.getModifierState) === null || e === void 0 ? void 0 : e.call(t, "AltGraph"));
-  return ji[(i ? 1 : 0) + (o ? 2 : 0)];
+function Zi(e) {
+  var t;
+  const i = (e.shiftKey || e.ctrlKey) && ut(e), o = e.altKey || e.metaKey || ((t = e.getModifierState) === null || t === void 0 ? void 0 : t.call(e, "AltGraph"));
+  return Fi[(i ? 1 : 0) + (o ? 2 : 0)];
 }
-function Yi(t, e) {
-  const i = (n) => n.orig === e.orig && n.dest === e.dest, o = t.shapes.find(i);
-  o && (t.shapes = t.shapes.filter((n) => !i(n))), (!o || o.brush !== e.brush) && t.shapes.push({
-    orig: e.orig,
-    dest: e.dest,
-    brush: e.brush
-  }), xt(t);
+function Yi(e, t) {
+  const i = (n) => n.orig === t.orig && n.dest === t.dest, o = e.shapes.find(i);
+  o && (e.shapes = e.shapes.filter((n) => !i(n))), (!o || o.brush !== t.brush) && e.shapes.push({
+    orig: t.orig,
+    dest: t.dest,
+    brush: t.brush
+  }), Ot(e);
 }
-function xt(t) {
-  t.onChange && t.onChange(t.shapes);
+function Ot(e) {
+  e.onChange && e.onChange(e.shapes);
 }
-function Xi(t, e) {
-  if (!(t.trustAllEvents || e.isTrusted) || e.button !== void 0 && e.button !== 0 || e.touches && e.touches.length > 1)
+function Xi(e, t) {
+  if (!(e.trustAllEvents || t.isTrusted) || t.buttons !== void 0 && t.buttons > 1 || t.touches && t.touches.length > 1)
     return;
-  const i = t.dom.bounds(), o = te(e), n = ie(o, O(t), i);
+  const i = e.dom.bounds(), o = te(t), n = ie(o, O(e), i);
   if (!n)
     return;
-  const r = t.pieces.get(n), s = t.selected;
-  if (!s && t.drawable.enabled && (t.drawable.eraseOnClick || !r || r.color !== t.turnColor) && zi(t), e.cancelable !== !1 && (!e.touches || t.blockTouchScroll || r || s || Ji(t, o)))
-    e.preventDefault();
-  else if (e.touches)
+  const r = e.pieces.get(n), s = e.selected;
+  if (!s && e.drawable.enabled && (e.drawable.eraseOnClick || !r || r.color !== e.turnColor) && zi(e), t.cancelable !== !1 && (!t.touches || e.blockTouchScroll || r || s || Ji(e, o)))
+    t.preventDefault();
+  else if (t.touches)
     return;
-  const a = !!t.premovable.current, l = !!t.predroppable.current;
-  t.stats.ctrlKey = e.ctrlKey, t.selected && Fe(t, t.selected, n) ? X((u) => Ie(u, n), t) : Ie(t, n);
-  const c = t.selected === n, p = Ot(t, n);
-  if (r && p && c && Oi(t, n)) {
-    t.draggable.current = {
+  const a = !!e.premovable.current, l = !!e.predroppable.current;
+  e.stats.ctrlKey = t.ctrlKey, e.selected && We(e, e.selected, n) ? X((h) => Ie(h, n), e) : Ie(e, n);
+  const c = e.selected === n, p = It(e, n);
+  if (r && p && c && Ii(e, n)) {
+    e.draggable.current = {
       orig: n,
       piece: r,
       origPos: o,
       pos: o,
-      started: t.draggable.autoDistance && t.stats.dragged,
+      started: e.draggable.autoDistance && e.stats.dragged,
       element: p,
       previouslySelected: s,
-      originTarget: e.target,
+      originTarget: t.target,
       keyHasChanged: !1
     }, p.cgDragging = !0, p.classList.add("dragging");
-    const u = t.dom.elements.ghost;
-    u && (u.className = `ghost ${r.color} ${r.role}`, F(u, de(i)(w(n), O(t))), Ke(u, !0)), We(t);
+    const h = e.dom.elements.ghost;
+    h && (h.className = `ghost ${r.color} ${r.role}`, B(h, de(i)(w(n), O(e))), $e(h, !0)), Fe(e);
   } else
-    a && G(t), l && z(t);
-  t.dom.redraw();
+    a && G(e), l && z(e);
+  e.dom.redraw();
 }
-function Ji(t, e) {
-  const i = O(t), o = t.dom.bounds(), n = Math.pow(o.width / 8, 2);
-  for (const r of t.pieces.keys()) {
+function Ji(e, t) {
+  const i = O(e), o = e.dom.bounds(), n = Math.pow(o.width / 8, 2);
+  for (const r of e.pieces.keys()) {
     const s = ft(r, i, o);
-    if (ce(s, e) <= n)
+    if (ce(s, t) <= n)
       return !0;
   }
   return !1;
 }
-function eo(t, e, i, o) {
+function eo(e, t, i, o) {
   const n = "a0";
-  t.pieces.set(n, e), t.dom.redraw();
+  e.pieces.set(n, t), e.dom.redraw();
   const r = te(i);
-  t.draggable.current = {
+  e.draggable.current = {
     orig: n,
-    piece: e,
+    piece: t,
     origPos: r,
     pos: r,
     started: !0,
-    element: () => Ot(t, n),
+    element: () => It(e, n),
     originTarget: i.target,
     newPiece: !0,
     force: !!o,
     keyHasChanged: !1
-  }, We(t);
+  }, Fe(e);
 }
-function We(t) {
+function Fe(e) {
   requestAnimationFrame(() => {
-    var e;
-    const i = t.draggable.current;
+    var t;
+    const i = e.draggable.current;
     if (!i)
       return;
-    !((e = t.animation.current) === null || e === void 0) && e.plan.anims.has(i.orig) && (t.animation.current = void 0);
-    const o = t.pieces.get(i.orig);
-    if (!o || !Ne(o, i.piece))
-      be(t);
-    else if (!i.started && ce(i.pos, i.origPos) >= Math.pow(t.draggable.distance, 2) && (i.started = !0), i.started) {
+    !((t = e.animation.current) === null || t === void 0) && t.plan.anims.has(i.orig) && (e.animation.current = void 0);
+    const o = e.pieces.get(i.orig);
+    if (!o || !qe(o, i.piece))
+      _e(e);
+    else if (!i.started && ce(i.pos, i.origPos) >= Math.pow(e.draggable.distance, 2) && (i.started = !0), i.started) {
       if (typeof i.element == "function") {
         const r = i.element();
         if (!r)
           return;
         r.cgDragging = !0, r.classList.add("dragging"), i.element = r;
       }
-      const n = t.dom.bounds();
-      F(i.element, [
+      const n = e.dom.bounds();
+      B(i.element, [
         i.pos[0] - n.left - n.width / 16,
         i.pos[1] - n.top - n.height / 16
-      ]), i.keyHasChanged || (i.keyHasChanged = i.orig !== ie(i.pos, O(t), n));
+      ]), i.keyHasChanged || (i.keyHasChanged = i.orig !== ie(i.pos, O(e), n));
     }
-    We(t);
+    Fe(e);
   });
 }
-function to(t, e) {
-  t.draggable.current && (!e.touches || e.touches.length < 2) && (t.draggable.current.pos = te(e));
+function to(e, t) {
+  e.draggable.current && (!t.touches || t.touches.length < 2) && (e.draggable.current.pos = te(t));
 }
-function io(t, e) {
-  const i = t.draggable.current;
+function io(e, t) {
+  const i = e.draggable.current;
   if (!i)
     return;
-  if (e.type === "touchend" && e.cancelable !== !1 && e.preventDefault(), e.type === "touchend" && i.originTarget !== e.target && !i.newPiece) {
-    t.draggable.current = void 0;
+  if (t.type === "touchend" && t.cancelable !== !1 && t.preventDefault(), t.type === "touchend" && i.originTarget !== t.target && !i.newPiece) {
+    e.draggable.current = void 0;
     return;
   }
-  G(t), z(t);
-  const o = te(e) || i.pos, n = ie(o, O(t), t.dom.bounds());
-  n && i.started && i.orig !== n ? i.newPiece ? yt(t, i.orig, n, i.force) : (t.stats.ctrlKey = e.ctrlKey, St(t, i.orig, n) && (t.stats.dragged = !0)) : i.newPiece ? t.pieces.delete(i.orig) : t.draggable.deleteOnDropOff && !n && (t.pieces.delete(i.orig), D(t.events.change)), (i.orig === i.previouslySelected || i.keyHasChanged) && (i.orig === n || !n) ? L(t) : t.selectable.enabled || L(t), Dt(t), t.draggable.current = void 0, t.dom.redraw();
+  G(e), z(e);
+  const o = te(t) || i.pos, n = ie(o, O(e), e.dom.bounds());
+  n && i.started && i.orig !== n ? i.newPiece ? yt(e, i.orig, n, i.force) : (e.stats.ctrlKey = t.ctrlKey, St(e, i.orig, n) && (e.stats.dragged = !0)) : i.newPiece ? e.pieces.delete(i.orig) : e.draggable.deleteOnDropOff && !n && (e.pieces.delete(i.orig), D(e.events.change)), (i.orig === i.previouslySelected || i.keyHasChanged) && (i.orig === n || !n) ? L(e) : e.selectable.enabled || L(e), qt(e), e.draggable.current = void 0, e.dom.redraw();
 }
-function be(t) {
-  const e = t.draggable.current;
-  e && (e.newPiece && t.pieces.delete(e.orig), t.draggable.current = void 0, L(t), Dt(t), t.dom.redraw());
+function _e(e) {
+  const t = e.draggable.current;
+  t && (t.newPiece && e.pieces.delete(t.orig), e.draggable.current = void 0, L(e), qt(e), e.dom.redraw());
 }
-function Dt(t) {
-  const e = t.dom.elements;
-  e.ghost && Ke(e.ghost, !1);
+function qt(e) {
+  const t = e.dom.elements;
+  t.ghost && $e(t.ghost, !1);
 }
-function Ot(t, e) {
-  let i = t.dom.elements.board.firstChild;
+function It(e, t) {
+  let i = e.dom.elements.board.firstChild;
   for (; i; ) {
-    if (i.cgKey === e && i.tagName === "PIECE")
+    if (i.cgKey === t && i.tagName === "PIECE")
       return i;
     i = i.nextSibling;
   }
 }
-function oo(t, e) {
-  t.exploding = { stage: 1, keys: e }, t.dom.redraw(), setTimeout(() => {
-    Xe(t, 2), setTimeout(() => Xe(t, void 0), 120);
+function oo(e, t) {
+  e.exploding = { stage: 1, keys: t }, e.dom.redraw(), setTimeout(() => {
+    Je(e, 2), setTimeout(() => Je(e, void 0), 120);
   }, 120);
 }
-function Xe(t, e) {
-  t.exploding && (e ? t.exploding.stage = e : t.exploding = void 0, t.dom.redraw());
+function Je(e, t) {
+  e.exploding && (t ? e.exploding.stage = t : e.exploding = void 0, e.dom.redraw());
 }
-function no(t, e) {
+function no(e, t) {
   function i() {
-    Pi(t), e();
+    Pi(e), t();
   }
   return {
     set(o) {
-      o.orientation && o.orientation !== t.orientation && i(), Mt(t, o), (o.fen ? X : U)((n) => Tt(n, o), t);
+      o.orientation && o.orientation !== e.orientation && i(), Mt(e, o), (o.fen ? X : U)((n) => Tt(n, o), e);
     },
-    state: t,
-    getFen: () => Fi(t.pieces),
+    state: e,
+    getFen: () => Bi(e.pieces),
     toggleOrientation: i,
     setPieces(o) {
-      X((n) => Ei(n, o), t);
+      X((n) => Ei(n, o), e);
     },
     selectSquare(o, n) {
-      o ? X((r) => Ie(r, o, n), t) : t.selected && (L(t), t.dom.redraw());
+      o ? X((r) => Ie(r, o, n), e) : e.selected && (L(e), e.dom.redraw());
     },
     move(o, n) {
-      X((r) => _t(r, o, n), t);
+      X((r) => _t(r, o, n), e);
     },
     newPiece(o, n) {
-      X((r) => $e(r, o, n), t);
+      X((r) => Be(r, o, n), e);
     },
     playPremove() {
-      if (t.premovable.current) {
-        if (X(qi, t))
+      if (e.premovable.current) {
+        if (X(Ni, e))
           return !0;
-        t.dom.redraw();
+        e.dom.redraw();
       }
       return !1;
     },
     playPredrop(o) {
-      if (t.predroppable.current) {
-        const n = Ri(t, o);
-        return t.dom.redraw(), n;
+      if (e.predroppable.current) {
+        const n = Ri(e, o);
+        return e.dom.redraw(), n;
       }
       return !1;
     },
     cancelPremove() {
-      U(G, t);
+      U(G, e);
     },
     cancelPredrop() {
-      U(z, t);
+      U(z, e);
     },
     cancelMove() {
       U((o) => {
-        He(o), be(o);
-      }, t);
+        Ve(o), _e(o);
+      }, e);
     },
     stop() {
       U((o) => {
-        Ze(o), be(o);
-      }, t);
+        Ye(o), _e(o);
+      }, e);
     },
     explode(o) {
-      oo(t, o);
+      oo(e, o);
     },
     setAutoShapes(o) {
-      U((n) => n.drawable.autoShapes = o, t);
+      U((n) => n.drawable.autoShapes = o, e);
     },
     setShapes(o) {
-      U((n) => n.drawable.shapes = o, t);
+      U((n) => n.drawable.shapes = o, e);
     },
     getKeyAtDomPos(o) {
-      return ie(o, O(t), t.dom.bounds());
+      return ie(o, O(e), e.dom.bounds());
     },
-    redrawAll: e,
+    redrawAll: t,
     dragNewPiece(o, n, r) {
-      eo(t, o, n, r);
+      eo(e, o, n, r);
     },
     destroy() {
-      Ze(t), t.dom.unbind && t.dom.unbind(), t.dom.destroyed = !0;
+      Ye(e), e.dom.unbind && e.dom.unbind(), e.dom.destroyed = !0;
     }
   };
 }
@@ -2374,6 +2273,7 @@ function ro() {
     orientation: "white",
     turnColor: "white",
     coordinates: !0,
+    coordinatesOnSquares: !1,
     ranksPosition: "right",
     autoCastle: !0,
     viewOnly: !1,
@@ -2447,63 +2347,67 @@ function ro() {
           opacity: 0.35,
           lineWidth: 15
         },
-        purple: { key: "purp", color: "#68217a", opacity: 0.65, lineWidth: 10 },
+        purple: { key: "purple", color: "#68217a", opacity: 0.65, lineWidth: 10 },
         pink: { key: "pink", color: "#ee2080", opacity: 0.5, lineWidth: 10 },
-        hilite: { key: "hilite", color: "#fff", opacity: 1, lineWidth: 1 }
+        white: { key: "white", color: "white", opacity: 1, lineWidth: 10 }
       },
       prevSvgHash: ""
     },
     hold: Si()
   };
 }
+const et = {
+  hilitePrimary: { key: "hilitePrimary", color: "#3291ff", opacity: 1, lineWidth: 1 },
+  hiliteWhite: { key: "hiliteWhite", color: "#ffffff", opacity: 1, lineWidth: 1 }
+};
 function so() {
-  const t = E("defs"), e = I(E("filter"), { id: "cg-filter-blur" });
-  return e.appendChild(I(E("feGaussianBlur"), { stdDeviation: "0.022" })), t.appendChild(e), t;
+  const e = P("defs"), t = x(P("filter"), { id: "cg-filter-blur" });
+  return t.appendChild(x(P("feGaussianBlur"), { stdDeviation: "0.019" })), e.appendChild(t), e;
 }
-function ao(t, e, i) {
+function ao(e, t, i) {
   var o;
-  const n = t.drawable, r = n.current, s = r && r.mouseSq ? r : void 0, a = /* @__PURE__ */ new Map(), l = t.dom.bounds(), c = n.autoShapes.filter((h) => !h.piece);
-  for (const h of n.shapes.concat(c).concat(s ? [s] : [])) {
-    if (!h.dest)
+  const n = e.drawable, r = n.current, s = r && r.mouseSq ? r : void 0, a = /* @__PURE__ */ new Map(), l = e.dom.bounds(), c = n.autoShapes.filter((u) => !u.piece);
+  for (const u of n.shapes.concat(c).concat(s ? [s] : [])) {
+    if (!u.dest)
       continue;
-    const g = (o = a.get(h.dest)) !== null && o !== void 0 ? o : /* @__PURE__ */ new Set(), f = _e(ve(w(h.orig), t.orientation), l), y = _e(ve(w(h.dest), t.orientation), l);
-    g.add(De(f, y)), a.set(h.dest, g);
+    const m = (o = a.get(u.dest)) !== null && o !== void 0 ? o : /* @__PURE__ */ new Set(), f = ye(Se(w(u.orig), e.orientation), l), y = ye(Se(w(u.dest), e.orientation), l);
+    m.add(Re(f, y)), a.set(u.dest, m);
   }
-  const p = n.shapes.concat(c).map((h) => ({
-    shape: h,
+  const p = n.shapes.concat(c).map((u) => ({
+    shape: u,
     current: !1,
-    hash: Je(h, xe(h.dest, a), !1, l)
+    hash: tt(u, Ne(u.dest, a), !1, l)
   }));
   s && p.push({
     shape: s,
     current: !0,
-    hash: Je(s, xe(s.dest, a), !0, l)
+    hash: tt(s, Ne(s.dest, a), !0, l)
   });
-  const u = p.map((h) => h.hash).join(";");
-  if (u === t.drawable.prevSvgHash)
+  const h = p.map((u) => u.hash).join(";");
+  if (h === e.drawable.prevSvgHash)
     return;
-  t.drawable.prevSvgHash = u;
-  const d = e.querySelector("defs");
-  lo(n, p, d), co(p, e.querySelector("g"), i.querySelector("g"), (h) => fo(t, h, n.brushes, a, l));
+  e.drawable.prevSvgHash = h;
+  const d = t.querySelector("defs");
+  lo(n, p, d), co(p, t.querySelector("g"), i.querySelector("g"), (u) => fo(e, u, n.brushes, a, l));
 }
-function lo(t, e, i) {
+function lo(e, t, i) {
   var o;
   const n = /* @__PURE__ */ new Map();
   let r;
-  for (const l of e.filter((c) => c.shape.dest && c.shape.brush))
-    r = qt(t.brushes[l.shape.brush], l.shape.modifiers), !((o = l.shape.modifiers) === null || o === void 0) && o.hilite && n.set("hilite", t.brushes.hilite), n.set(r.key, r);
+  for (const l of t.filter((c) => c.shape.dest && c.shape.brush))
+    r = Nt(e.brushes[l.shape.brush], l.shape.modifiers), !((o = l.shape.modifiers) === null || o === void 0) && o.hilite && n.set(we(r).key, we(r)), n.set(r.key, r);
   const s = /* @__PURE__ */ new Set();
   let a = i.firstElementChild;
   for (; a; )
     s.add(a.getAttribute("cgKey")), a = a.nextElementSibling;
   for (const [l, c] of n.entries())
-    s.has(l) || i.appendChild(mo(c));
+    s.has(l) || i.appendChild(go(c));
 }
-function co(t, e, i, o) {
+function co(e, t, i, o) {
   const n = /* @__PURE__ */ new Map();
-  for (const r of t)
+  for (const r of e)
     n.set(r.hash, !1);
-  for (const r of [e, i]) {
+  for (const r of [t, i]) {
     const s = [];
     let a = r.firstElementChild, l;
     for (; a; )
@@ -2511,173 +2415,176 @@ function co(t, e, i, o) {
     for (const c of s)
       r.removeChild(c);
   }
-  for (const r of t.filter((s) => !n.get(s.hash)))
+  for (const r of e.filter((s) => !n.get(s.hash)))
     for (const s of o(r))
-      s.isCustom ? i.appendChild(s.el) : e.appendChild(s.el);
+      s.isCustom ? i.appendChild(s.el) : t.appendChild(s.el);
 }
-function Je({ orig: t, dest: e, brush: i, piece: o, modifiers: n, customSvg: r, label: s }, a, l, c) {
-  var p, u;
+function tt({ orig: e, dest: t, brush: i, piece: o, modifiers: n, customSvg: r, label: s }, a, l, c) {
+  var p, h;
   return [
     c.width,
     c.height,
     l,
-    t,
     e,
+    t,
     i,
     a && "-",
-    o && uo(o),
-    n && ho(n),
-    r && `custom-${et(r.html)},${(u = (p = r.center) === null || p === void 0 ? void 0 : p[0]) !== null && u !== void 0 ? u : "o"}`,
-    s && `label-${et(s.text)}`
+    o && ho(o),
+    n && uo(n),
+    r && `custom-${it(r.html)},${(h = (p = r.center) === null || p === void 0 ? void 0 : p[0]) !== null && h !== void 0 ? h : "o"}`,
+    s && `label-${it(s.text)}`
   ].filter((d) => d).join(",");
 }
-function uo(t) {
-  return [t.color, t.role, t.scale].filter((e) => e).join(",");
+function ho(e) {
+  return [e.color, e.role, e.scale].filter((t) => t).join(",");
 }
-function ho(t) {
-  return [t.lineWidth, t.hilite && "*"].filter((e) => e).join(",");
+function uo(e) {
+  return [e.lineWidth, e.hilite && "*"].filter((t) => t).join(",");
 }
-function et(t) {
-  let e = 0;
-  for (let i = 0; i < t.length; i++)
-    e = (e << 5) - e + t.charCodeAt(i) >>> 0;
-  return e.toString();
+function it(e) {
+  let t = 0;
+  for (let i = 0; i < e.length; i++)
+    t = (t << 5) - t + e.charCodeAt(i) >>> 0;
+  return t.toString();
 }
-function fo(t, { shape: e, current: i, hash: o }, n, r, s) {
+function fo(e, { shape: t, current: i, hash: o }, n, r, s) {
   var a, l;
-  const c = _e(ve(w(e.orig), t.orientation), s), p = e.dest ? _e(ve(w(e.dest), t.orientation), s) : c, u = e.brush && qt(n[e.brush], e.modifiers), d = r.get(e.dest), h = [];
-  if (u) {
-    const g = I(E("g"), { cgHash: o });
-    h.push({ el: g }), c[0] !== p[0] || c[1] !== p[1] ? g.appendChild(go(e, u, c, p, i, xe(e.dest, r))) : g.appendChild(po(n[e.brush], c, i, s));
+  const c = ye(Se(w(t.orig), e.orientation), s), p = t.dest ? ye(Se(w(t.dest), e.orientation), s) : c, h = t.brush && Nt(n[t.brush], t.modifiers), d = r.get(t.dest), u = [];
+  if (h) {
+    const m = x(P("g"), { cgHash: o });
+    u.push({ el: m }), c[0] !== p[0] || c[1] !== p[1] ? m.appendChild(mo(t, h, c, p, i, Ne(t.dest, r))) : m.appendChild(po(n[t.brush], c, i, s));
   }
-  if (e.label) {
-    const g = e.label;
-    (a = g.fill) !== null && a !== void 0 || (g.fill = e.brush && n[e.brush].color);
-    const f = e.brush ? void 0 : "tr";
-    h.push({ el: bo(g, o, c, p, d, f), isCustom: !0 });
+  if (t.label) {
+    const m = t.label;
+    (a = m.fill) !== null && a !== void 0 || (m.fill = t.brush && n[t.brush].color);
+    const f = t.brush ? void 0 : "tr";
+    u.push({ el: bo(m, o, c, p, d, f), isCustom: !0 });
   }
-  if (e.customSvg) {
-    const g = (l = e.customSvg.center) !== null && l !== void 0 ? l : "orig", [f, y] = g === "label" ? Lt(c, p, d).map((k) => k - 0.5) : g === "dest" ? p : c, S = I(E("g"), { transform: `translate(${f},${y})`, cgHash: o });
-    S.innerHTML = `<svg width="1" height="1" viewBox="0 0 100 100">${e.customSvg.html}</svg>`, h.push({ el: S, isCustom: !0 });
+  if (t.customSvg) {
+    const m = (l = t.customSvg.center) !== null && l !== void 0 ? l : "orig", [f, y] = m === "label" ? Lt(c, p, d).map((k) => k - 0.5) : m === "dest" ? p : c, S = x(P("g"), { transform: `translate(${f},${y})`, cgHash: o });
+    S.innerHTML = `<svg width="1" height="1" viewBox="0 0 100 100">${t.customSvg.html}</svg>`, u.push({ el: S, isCustom: !0 });
   }
-  return h;
+  return u;
 }
-function po(t, e, i, o) {
+function po(e, t, i, o) {
   const n = vo(), r = (o.width + o.height) / (4 * Math.max(o.width, o.height));
-  return I(E("circle"), {
-    stroke: t.color,
+  return x(P("circle"), {
+    stroke: e.color,
     "stroke-width": n[i ? 0 : 1],
     fill: "none",
-    opacity: Rt(t, i),
-    cx: e[0],
-    cy: e[1],
+    opacity: Rt(e, i),
+    cx: t[0],
+    cy: t[1],
     r: r - n[1] / 2
   });
 }
-function go(t, e, i, o, n, r) {
+function we(e) {
+  return ["#ffffff", "#fff", "white"].includes(e.color) ? et.hilitePrimary : et.hiliteWhite;
+}
+function mo(e, t, i, o, n, r) {
   var s;
   function a(p) {
-    var u;
-    const d = wo(r && !n), h = o[0] - i[0], g = o[1] - i[1], f = Math.atan2(g, h), y = Math.cos(f) * d, S = Math.sin(f) * d;
-    return I(E("line"), {
-      stroke: p ? "white" : e.color,
-      "stroke-width": _o(e, n) + (p ? 0.04 : 0),
+    var h;
+    const d = wo(r && !n), u = o[0] - i[0], m = o[1] - i[1], f = Math.atan2(m, u), y = Math.cos(f) * d, S = Math.sin(f) * d;
+    return x(P("line"), {
+      stroke: p ? we(t).color : t.color,
+      "stroke-width": _o(t, n) + (p ? 0.04 : 0),
       "stroke-linecap": "round",
-      "marker-end": `url(#arrowhead-${p ? "hilite" : e.key})`,
-      opacity: !((u = t.modifiers) === null || u === void 0) && u.hilite ? 1 : Rt(e, n),
+      "marker-end": `url(#arrowhead-${p ? we(t).key : t.key})`,
+      opacity: !((h = e.modifiers) === null || h === void 0) && h.hilite ? 1 : Rt(t, n),
       x1: i[0],
       y1: i[1],
       x2: o[0] - y,
       y2: o[1] - S
     });
   }
-  if (!(!((s = t.modifiers) === null || s === void 0) && s.hilite))
+  if (!(!((s = e.modifiers) === null || s === void 0) && s.hilite))
     return a(!1);
-  const l = E("g"), c = I(E("g"), { filter: "url(#cg-filter-blur)" });
+  const l = P("g"), c = x(P("g"), { filter: "url(#cg-filter-blur)" });
   return c.appendChild(So(i, o)), c.appendChild(a(!0)), l.appendChild(c), l.appendChild(a(!1)), l;
 }
-function mo(t) {
-  const e = I(E("marker"), {
-    id: "arrowhead-" + t.key,
+function go(e) {
+  const t = x(P("marker"), {
+    id: "arrowhead-" + e.key,
     orient: "auto",
     overflow: "visible",
     markerWidth: 4,
     markerHeight: 4,
-    refX: t.key === "hilite" ? 1.86 : 2.05,
+    refX: e.key.startsWith("hilite") ? 1.86 : 2.05,
     refY: 2
   });
-  return e.appendChild(I(E("path"), {
+  return t.appendChild(x(P("path"), {
     d: "M0,0 V4 L3,2 Z",
-    fill: t.color
-  })), e.setAttribute("cgKey", t.key), e;
+    fill: e.color
+  })), t.setAttribute("cgKey", e.key), t;
 }
-function bo(t, e, i, o, n, r) {
+function bo(e, t, i, o, n, r) {
   var s;
-  const l = 0.4 * 0.75 ** t.text.length, c = Lt(i, o, n), p = r === "tr" ? 0.4 : 0, u = I(E("g"), {
+  const l = 0.4 * 0.75 ** e.text.length, c = Lt(i, o, n), p = r === "tr" ? 0.4 : 0, h = x(P("g"), {
     transform: `translate(${c[0] + p},${c[1] - p})`,
-    cgHash: e
+    cgHash: t
   });
-  u.appendChild(I(E("circle"), {
+  h.appendChild(x(P("circle"), {
     r: 0.4 / 2,
     "fill-opacity": r ? 1 : 0.8,
     "stroke-opacity": r ? 1 : 0.7,
     "stroke-width": 0.03,
-    fill: (s = t.fill) !== null && s !== void 0 ? s : "#666",
+    fill: (s = e.fill) !== null && s !== void 0 ? s : "#666",
     stroke: "white"
   }));
-  const d = I(E("text"), {
+  const d = x(P("text"), {
     "font-size": l,
     "font-family": "Noto Sans",
     "text-anchor": "middle",
     fill: "white",
-    y: 0.13 * 0.75 ** t.text.length
+    y: 0.13 * 0.75 ** e.text.length
   });
-  return d.innerHTML = t.text, u.appendChild(d), u;
+  return d.innerHTML = e.text, h.appendChild(d), h;
 }
-function ve(t, e) {
-  return e === "white" ? t : [7 - t[0], 7 - t[1]];
+function Se(e, t) {
+  return t === "white" ? e : [7 - e[0], 7 - e[1]];
 }
-function xe(t, e) {
-  return (t && e.has(t) && e.get(t).size > 1) === !0;
+function Ne(e, t) {
+  return (e && t.has(e) && t.get(e).size > 1) === !0;
 }
-function E(t) {
-  return document.createElementNS("http://www.w3.org/2000/svg", t);
+function P(e) {
+  return document.createElementNS("http://www.w3.org/2000/svg", e);
 }
-function I(t, e) {
-  for (const i in e)
-    Object.prototype.hasOwnProperty.call(e, i) && t.setAttribute(i, e[i]);
-  return t;
+function x(e, t) {
+  for (const i in t)
+    Object.prototype.hasOwnProperty.call(t, i) && e.setAttribute(i, t[i]);
+  return e;
 }
-function qt(t, e) {
-  return e ? {
-    color: t.color,
-    opacity: Math.round(t.opacity * 10) / 10,
-    lineWidth: Math.round(e.lineWidth || t.lineWidth),
-    key: [t.key, e.lineWidth].filter((i) => i).join("")
-  } : t;
+function Nt(e, t) {
+  return t ? {
+    color: e.color,
+    opacity: Math.round(e.opacity * 10) / 10,
+    lineWidth: Math.round(t.lineWidth || e.lineWidth),
+    key: [e.key, t.lineWidth].filter((i) => i).join("")
+  } : e;
 }
 function vo() {
   return [3 / 64, 4 / 64];
 }
-function _o(t, e) {
-  return (t.lineWidth || 10) * (e ? 0.85 : 1) / 64;
+function _o(e, t) {
+  return (e.lineWidth || 10) * (t ? 0.85 : 1) / 64;
 }
-function Rt(t, e) {
-  return (t.opacity || 1) * (e ? 0.9 : 1);
+function Rt(e, t) {
+  return (e.opacity || 1) * (t ? 0.9 : 1);
 }
-function wo(t) {
-  return (t ? 20 : 10) / 64;
+function wo(e) {
+  return (e ? 20 : 10) / 64;
 }
-function _e(t, e) {
-  const i = Math.min(1, e.width / e.height), o = Math.min(1, e.height / e.width);
-  return [(t[0] - 3.5) * i, (3.5 - t[1]) * o];
+function ye(e, t) {
+  const i = Math.min(1, t.width / t.height), o = Math.min(1, t.height / t.width);
+  return [(e[0] - 3.5) * i, (3.5 - e[1]) * o];
 }
-function So(t, e) {
+function So(e, t) {
   const i = {
-    from: [Math.floor(Math.min(t[0], e[0])), Math.floor(Math.min(t[1], e[1]))],
-    to: [Math.ceil(Math.max(t[0], e[0])), Math.ceil(Math.max(t[1], e[1]))]
+    from: [Math.floor(Math.min(e[0], t[0])), Math.floor(Math.min(e[1], t[1]))],
+    to: [Math.ceil(Math.max(e[0], t[0])), Math.ceil(Math.max(e[1], t[1]))]
   };
-  return I(E("rect"), {
+  return x(P("rect"), {
     x: i.from[0],
     y: i.from[1],
     width: i.to[0] - i.from[0],
@@ -2686,136 +2593,140 @@ function So(t, e) {
     stroke: "none"
   });
 }
-function De(t, e, i = !0) {
-  const o = Math.atan2(e[1] - t[1], e[0] - t[0]) + Math.PI;
+function Re(e, t, i = !0) {
+  const o = Math.atan2(t[1] - e[1], t[0] - e[0]) + Math.PI;
   return i ? (Math.round(o * 8 / Math.PI) + 16) % 16 : o;
 }
-function yo(t, e) {
-  return Math.sqrt([t[0] - e[0], t[1] - e[1]].reduce((i, o) => i + o * o, 0));
+function yo(e, t) {
+  return Math.sqrt([e[0] - t[0], e[1] - t[1]].reduce((i, o) => i + o * o, 0));
 }
-function Lt(t, e, i) {
-  let o = yo(t, e);
-  const n = De(t, e, !1);
+function Lt(e, t, i) {
+  let o = yo(e, t);
+  const n = Re(e, t, !1);
   if (i && (o -= 33 / 64, i.size > 1)) {
     o -= 10 / 64;
-    const r = De(t, e);
+    const r = Re(e, t);
     (i.has((r + 1) % 16) || i.has((r + 15) % 16)) && r & 1 && (o -= 0.4);
   }
-  return [t[0] - Math.cos(n) * o, t[1] - Math.sin(n) * o].map((r) => r + 0.5);
+  return [e[0] - Math.cos(n) * o, e[1] - Math.sin(n) * o].map((r) => r + 0.5);
 }
-function ko(t, e) {
-  t.innerHTML = "", t.classList.add("cg-wrap");
+function ko(e, t) {
+  e.innerHTML = "", e.classList.add("cg-wrap");
   for (const l of vi)
-    t.classList.toggle("orientation-" + l, e.orientation === l);
-  t.classList.toggle("manipulable", !e.viewOnly);
+    e.classList.toggle("orientation-" + l, t.orientation === l);
+  e.classList.toggle("manipulable", !t.viewOnly);
   const i = H("cg-container");
-  t.appendChild(i);
+  e.appendChild(i);
   const o = H("cg-board");
   i.appendChild(o);
   let n, r, s;
-  if (e.drawable.visible && (n = I(E("svg"), {
+  if (t.drawable.visible && (n = x(P("svg"), {
     class: "cg-shapes",
     viewBox: "-4 -4 8 8",
     preserveAspectRatio: "xMidYMid slice"
-  }), n.appendChild(so()), n.appendChild(E("g")), r = I(E("svg"), {
+  }), n.appendChild(so()), n.appendChild(P("g")), r = x(P("svg"), {
     class: "cg-custom-svgs",
     viewBox: "-3.5 -3.5 8 8",
     preserveAspectRatio: "xMidYMid slice"
-  }), r.appendChild(E("g")), s = H("cg-auto-pieces"), i.appendChild(n), i.appendChild(r), i.appendChild(s)), e.coordinates) {
-    const l = e.orientation === "black" ? " black" : "", c = e.ranksPosition === "left" ? " left" : "";
-    i.appendChild(tt(qe, "ranks" + l + c)), i.appendChild(tt(Oe, "files" + l));
+  }), r.appendChild(P("g")), s = H("cg-auto-pieces"), i.appendChild(n), i.appendChild(r), i.appendChild(s)), t.coordinates) {
+    const l = t.orientation === "black" ? " black" : "", c = t.ranksPosition === "left" ? " left" : "";
+    if (t.coordinatesOnSquares) {
+      const p = t.orientation === "white" ? (h) => h + 1 : (h) => 8 - h;
+      be.forEach((h, d) => i.appendChild(Me(ve.map((u) => h + u), "squares rank" + p(d) + l + c)));
+    } else
+      i.appendChild(Me(ve, "ranks" + l + c)), i.appendChild(Me(be, "files" + l));
   }
   let a;
-  return e.draggable.enabled && e.draggable.showGhost && (a = H("piece", "ghost"), Ke(a, !1), i.appendChild(a)), {
+  return t.draggable.enabled && t.draggable.showGhost && (a = H("piece", "ghost"), $e(a, !1), i.appendChild(a)), {
     board: o,
     container: i,
-    wrap: t,
+    wrap: e,
     ghost: a,
     svg: n,
     customSvg: r,
     autoPieces: s
   };
 }
-function tt(t, e) {
-  const i = H("coords", e);
+function Me(e, t) {
+  const i = H("coords", t);
   let o;
-  for (const n of t)
+  for (const n of e)
     o = H("coord"), o.textContent = n, i.appendChild(o);
   return i;
 }
-function Co(t, e) {
-  if (!t.dropmode.active)
+function Co(e, t) {
+  if (!e.dropmode.active)
     return;
-  G(t), z(t);
-  const i = t.dropmode.piece;
+  G(e), z(e);
+  const i = e.dropmode.piece;
   if (i) {
-    t.pieces.set("a0", i);
-    const o = te(e), n = o && ie(o, O(t), t.dom.bounds());
-    n && yt(t, "a0", n);
+    e.pieces.set("a0", i);
+    const o = te(t), n = o && ie(o, O(e), e.dom.bounds());
+    n && yt(e, "a0", n);
   }
-  t.dom.redraw();
+  e.dom.redraw();
 }
-function Po(t, e) {
-  const i = t.dom.elements.board;
-  if ("ResizeObserver" in window && new ResizeObserver(e).observe(t.dom.elements.wrap), (t.disableContextMenu || t.drawable.enabled) && i.addEventListener("contextmenu", (n) => n.preventDefault()), t.viewOnly)
+function Po(e, t) {
+  const i = e.dom.elements.board;
+  if ("ResizeObserver" in window && new ResizeObserver(t).observe(e.dom.elements.wrap), (e.disableContextMenu || e.drawable.enabled) && i.addEventListener("contextmenu", (n) => n.preventDefault()), e.viewOnly)
     return;
-  const o = Mo(t);
+  const o = Mo(e);
   i.addEventListener("touchstart", o, {
     passive: !1
   }), i.addEventListener("mousedown", o, {
     passive: !1
   });
 }
-function Eo(t, e) {
+function Eo(e, t) {
   const i = [];
-  if ("ResizeObserver" in window || i.push(ne(document.body, "chessground.resize", e)), !t.viewOnly) {
-    const o = it(t, to, Qi), n = it(t, io, Gi);
+  if ("ResizeObserver" in window || i.push(ne(document.body, "chessground.resize", t)), !e.viewOnly) {
+    const o = ot(e, to, Qi), n = ot(e, io, Gi);
     for (const s of ["touchmove", "mousemove"])
       i.push(ne(document, s, o));
     for (const s of ["touchend", "mouseup"])
       i.push(ne(document, s, n));
-    const r = () => t.dom.bounds.clear();
+    const r = () => e.dom.bounds.clear();
     i.push(ne(document, "scroll", r, { capture: !0, passive: !0 })), i.push(ne(window, "resize", r, { passive: !0 }));
   }
   return () => i.forEach((o) => o());
 }
-function ne(t, e, i, o) {
-  return t.addEventListener(e, i, o), () => t.removeEventListener(e, i, o);
+function ne(e, t, i, o) {
+  return e.addEventListener(t, i, o), () => e.removeEventListener(t, i, o);
 }
-const Mo = (t) => (e) => {
-  t.draggable.current ? be(t) : t.drawable.current ? It(t) : e.shiftKey || ht(e) ? t.drawable.enabled && Ui(t, e) : t.viewOnly || (t.dropmode.active ? Co(t, e) : Xi(t, e));
-}, it = (t, e, i) => (o) => {
-  t.drawable.current ? t.drawable.enabled && i(t, o) : t.viewOnly || e(t, o);
+const Mo = (e) => (t) => {
+  e.draggable.current ? _e(e) : e.drawable.current ? Dt(e) : t.shiftKey || ut(t) ? e.drawable.enabled && Ui(e, t) : e.viewOnly || (e.dropmode.active ? Co(e, t) : Xi(e, t));
+}, ot = (e, t, i) => (o) => {
+  e.drawable.current ? e.drawable.enabled && i(e, o) : e.viewOnly || t(e, o);
 };
-function To(t) {
-  const e = O(t), i = de(t.dom.bounds()), o = t.dom.elements.board, n = t.pieces, r = t.animation.current, s = r ? r.plan.anims : /* @__PURE__ */ new Map(), a = r ? r.plan.fadings : /* @__PURE__ */ new Map(), l = t.draggable.current, c = No(t), p = /* @__PURE__ */ new Set(), u = /* @__PURE__ */ new Set(), d = /* @__PURE__ */ new Map(), h = /* @__PURE__ */ new Map();
-  let g, f, y, S, k, v, T, C, Z, Y;
+function To(e) {
+  const t = O(e), i = de(e.dom.bounds()), o = e.dom.elements.board, n = e.pieces, r = e.animation.current, s = r ? r.plan.anims : /* @__PURE__ */ new Map(), a = r ? r.plan.fadings : /* @__PURE__ */ new Map(), l = e.draggable.current, c = xo(e), p = /* @__PURE__ */ new Set(), h = /* @__PURE__ */ new Set(), d = /* @__PURE__ */ new Map(), u = /* @__PURE__ */ new Map();
+  let m, f, y, S, k, v, T, C, Z, Y;
   for (f = o.firstChild; f; ) {
-    if (g = f.cgKey, Kt(f))
-      if (y = n.get(g), k = s.get(g), v = a.get(g), S = f.cgPiece, f.cgDragging && (!l || l.orig !== g) && (f.classList.remove("dragging"), F(f, i(w(g), e)), f.cgDragging = !1), !v && f.cgFading && (f.cgFading = !1, f.classList.remove("fading")), y) {
+    if (m = f.cgKey, Kt(f))
+      if (y = n.get(m), k = s.get(m), v = a.get(m), S = f.cgPiece, f.cgDragging && (!l || l.orig !== m) && (f.classList.remove("dragging"), B(f, i(w(m), t)), f.cgDragging = !1), !v && f.cgFading && (f.cgFading = !1, f.classList.remove("fading")), y) {
         if (k && f.cgAnimating && S === re(y)) {
-          const _ = w(g);
-          _[0] += k[2], _[1] += k[3], f.classList.add("anim"), F(f, i(_, e));
+          const _ = w(m);
+          _[0] += k[2], _[1] += k[3], f.classList.add("anim"), B(f, i(_, t));
         } else
-          f.cgAnimating && (f.cgAnimating = !1, f.classList.remove("anim"), F(f, i(w(g), e)), t.addPieceZIndex && (f.style.zIndex = Pe(w(g), e)));
-        S === re(y) && (!v || !f.cgFading) ? p.add(g) : v && S === re(v) ? (f.classList.add("fading"), f.cgFading = !0) : Ee(d, S, f);
+          f.cgAnimating && (f.cgAnimating = !1, f.classList.remove("anim"), B(f, i(w(m), t)), e.addPieceZIndex && (f.style.zIndex = Te(w(m), t)));
+        S === re(y) && (!v || !f.cgFading) ? p.add(m) : v && S === re(v) ? (f.classList.add("fading"), f.cgFading = !0) : Ae(d, S, f);
       } else
-        Ee(d, S, f);
+        Ae(d, S, f);
     else if ($t(f)) {
       const _ = f.className;
-      c.get(g) === _ ? u.add(g) : Ee(h, _, f);
+      c.get(m) === _ ? h.add(m) : Ae(u, _, f);
     }
     f = f.nextSibling;
   }
   for (const [_, V] of c)
-    if (!u.has(_)) {
-      Z = h.get(V), Y = Z && Z.pop();
-      const K = i(w(_), e);
+    if (!h.has(_)) {
+      Z = u.get(V), Y = Z && Z.pop();
+      const K = i(w(_), t);
       if (Y)
-        Y.cgKey = _, F(Y, K);
+        Y.cgKey = _, B(Y, K);
       else {
         const $ = H("square", V);
-        $.cgKey = _, F($, K), o.insertBefore($, o.firstChild);
+        $.cgKey = _, B($, K), o.insertBefore($, o.firstChild);
       }
     }
   for (const [_, V] of n)
@@ -2823,119 +2734,119 @@ function To(t) {
       if (T = d.get(re(V)), C = T && T.pop(), C) {
         C.cgKey = _, C.cgFading && (C.classList.remove("fading"), C.cgFading = !1);
         const K = w(_);
-        t.addPieceZIndex && (C.style.zIndex = Pe(K, e)), k && (C.cgAnimating = !0, C.classList.add("anim"), K[0] += k[2], K[1] += k[3]), F(C, i(K, e));
+        e.addPieceZIndex && (C.style.zIndex = Te(K, t)), k && (C.cgAnimating = !0, C.classList.add("anim"), K[0] += k[2], K[1] += k[3]), B(C, i(K, t));
       } else {
-        const K = re(V), $ = H("piece", K), ue = w(_);
-        $.cgPiece = K, $.cgKey = _, k && ($.cgAnimating = !0, ue[0] += k[2], ue[1] += k[3]), F($, i(ue, e)), t.addPieceZIndex && ($.style.zIndex = Pe(ue, e)), o.appendChild($);
+        const K = re(V), $ = H("piece", K), he = w(_);
+        $.cgPiece = K, $.cgKey = _, k && ($.cgAnimating = !0, he[0] += k[2], he[1] += k[3]), B($, i(he, t)), e.addPieceZIndex && ($.style.zIndex = Te(he, t)), o.appendChild($);
       }
   for (const _ of d.values())
-    nt(t, _);
-  for (const _ of h.values())
-    nt(t, _);
+    rt(e, _);
+  for (const _ of u.values())
+    rt(e, _);
 }
-function Ao(t) {
-  const e = O(t), i = de(t.dom.bounds());
-  let o = t.dom.elements.board.firstChild;
+function Ao(e) {
+  const t = O(e), i = de(e.dom.bounds());
+  let o = e.dom.elements.board.firstChild;
   for (; o; )
-    (Kt(o) && !o.cgAnimating || $t(o)) && F(o, i(w(o.cgKey), e)), o = o.nextSibling;
+    (Kt(o) && !o.cgAnimating || $t(o)) && B(o, i(w(o.cgKey), t)), o = o.nextSibling;
 }
-function ot(t) {
-  var e, i;
-  const o = t.dom.elements.wrap.getBoundingClientRect(), n = t.dom.elements.container, r = o.height / o.width, s = Math.floor(o.width * window.devicePixelRatio / 8) * 8 / window.devicePixelRatio, a = s * r;
-  n.style.width = s + "px", n.style.height = a + "px", t.dom.bounds.clear(), (e = t.addDimensionsCssVarsTo) === null || e === void 0 || e.style.setProperty("--cg-width", s + "px"), (i = t.addDimensionsCssVarsTo) === null || i === void 0 || i.style.setProperty("--cg-height", a + "px");
+function nt(e) {
+  var t, i;
+  const o = e.dom.elements.wrap.getBoundingClientRect(), n = e.dom.elements.container, r = o.height / o.width, s = Math.floor(o.width * window.devicePixelRatio / 8) * 8 / window.devicePixelRatio, a = s * r;
+  n.style.width = s + "px", n.style.height = a + "px", e.dom.bounds.clear(), (t = e.addDimensionsCssVarsTo) === null || t === void 0 || t.style.setProperty("---cg-width", s + "px"), (i = e.addDimensionsCssVarsTo) === null || i === void 0 || i.style.setProperty("---cg-height", a + "px");
 }
-const Kt = (t) => t.tagName === "PIECE", $t = (t) => t.tagName === "SQUARE";
-function nt(t, e) {
-  for (const i of e)
-    t.dom.elements.board.removeChild(i);
+const Kt = (e) => e.tagName === "PIECE", $t = (e) => e.tagName === "SQUARE";
+function rt(e, t) {
+  for (const i of t)
+    e.dom.elements.board.removeChild(i);
 }
-function Pe(t, e) {
-  const o = t[1];
-  return `${e ? 3 + 7 - o : 3 + o}`;
+function Te(e, t) {
+  const o = e[1];
+  return `${t ? 3 + 7 - o : 3 + o}`;
 }
-const re = (t) => `${t.color} ${t.role}`;
-function No(t) {
-  var e, i, o;
+const re = (e) => `${e.color} ${e.role}`;
+function xo(e) {
+  var t, i, o;
   const n = /* @__PURE__ */ new Map();
-  if (t.lastMove && t.highlight.lastMove)
-    for (const a of t.lastMove)
-      B(n, a, "last-move");
-  if (t.check && t.highlight.check && B(n, t.check, "check"), t.selected && (B(n, t.selected, "selected"), t.movable.showDests)) {
-    const a = (e = t.movable.dests) === null || e === void 0 ? void 0 : e.get(t.selected);
+  if (e.lastMove && e.highlight.lastMove)
+    for (const a of e.lastMove)
+      W(n, a, "last-move");
+  if (e.check && e.highlight.check && W(n, e.check, "check"), e.selected && (W(n, e.selected, "selected"), e.movable.showDests)) {
+    const a = (t = e.movable.dests) === null || t === void 0 ? void 0 : t.get(e.selected);
     if (a)
       for (const c of a)
-        B(n, c, "move-dest" + (t.pieces.has(c) ? " oc" : ""));
-    const l = (o = (i = t.premovable.customDests) === null || i === void 0 ? void 0 : i.get(t.selected)) !== null && o !== void 0 ? o : t.premovable.dests;
+        W(n, c, "move-dest" + (e.pieces.has(c) ? " oc" : ""));
+    const l = (o = (i = e.premovable.customDests) === null || i === void 0 ? void 0 : i.get(e.selected)) !== null && o !== void 0 ? o : e.premovable.dests;
     if (l)
       for (const c of l)
-        B(n, c, "premove-dest" + (t.pieces.has(c) ? " oc" : ""));
+        W(n, c, "premove-dest" + (e.pieces.has(c) ? " oc" : ""));
   }
-  const r = t.premovable.current;
+  const r = e.premovable.current;
   if (r)
     for (const a of r)
-      B(n, a, "current-premove");
+      W(n, a, "current-premove");
   else
-    t.predroppable.current && B(n, t.predroppable.current.key, "current-premove");
-  const s = t.exploding;
+    e.predroppable.current && W(n, e.predroppable.current.key, "current-premove");
+  const s = e.exploding;
   if (s)
     for (const a of s.keys)
-      B(n, a, "exploding" + s.stage);
-  return t.highlight.custom && t.highlight.custom.forEach((a, l) => {
-    B(n, l, a);
+      W(n, a, "exploding" + s.stage);
+  return e.highlight.custom && e.highlight.custom.forEach((a, l) => {
+    W(n, l, a);
   }), n;
 }
-function B(t, e, i) {
-  const o = t.get(e);
-  o ? t.set(e, `${o} ${i}`) : t.set(e, i);
+function W(e, t, i) {
+  const o = e.get(t);
+  o ? e.set(t, `${o} ${i}`) : e.set(t, i);
 }
-function Ee(t, e, i) {
-  const o = t.get(e);
-  o ? o.push(i) : t.set(e, [i]);
+function Ae(e, t, i) {
+  const o = e.get(t);
+  o ? o.push(i) : e.set(t, [i]);
 }
-function Io(t, e, i) {
+function Do(e, t, i) {
   const o = /* @__PURE__ */ new Map(), n = [];
-  for (const a of t)
+  for (const a of e)
     o.set(a.hash, !1);
-  let r = e.firstElementChild, s;
+  let r = t.firstElementChild, s;
   for (; r; )
     s = r.getAttribute("cgHash"), o.has(s) ? o.set(s, !0) : n.push(r), r = r.nextElementSibling;
   for (const a of n)
-    e.removeChild(a);
-  for (const a of t)
-    o.get(a.hash) || e.appendChild(i(a));
+    t.removeChild(a);
+  for (const a of e)
+    o.get(a.hash) || t.appendChild(i(a));
 }
-function xo(t, e) {
-  const o = t.drawable.autoShapes.filter((n) => n.piece).map((n) => ({
+function Oo(e, t) {
+  const o = e.drawable.autoShapes.filter((n) => n.piece).map((n) => ({
     shape: n,
-    hash: qo(n),
+    hash: No(n),
     current: !1
   }));
-  Io(o, e, (n) => Oo(t, n, t.dom.bounds()));
+  Do(o, t, (n) => Io(e, n, e.dom.bounds()));
 }
-function Do(t) {
-  var e;
-  const i = O(t), o = de(t.dom.bounds());
-  let n = (e = t.dom.elements.autoPieces) === null || e === void 0 ? void 0 : e.firstChild;
+function qo(e) {
+  var t;
+  const i = O(e), o = de(e.dom.bounds());
+  let n = (t = e.dom.elements.autoPieces) === null || t === void 0 ? void 0 : t.firstChild;
   for (; n; )
-    ut(n, o(w(n.cgKey), i), n.cgScale), n = n.nextSibling;
+    ht(n, o(w(n.cgKey), i), n.cgScale), n = n.nextSibling;
 }
-function Oo(t, { shape: e, hash: i }, o) {
+function Io(e, { shape: t, hash: i }, o) {
   var n, r, s;
-  const a = e.orig, l = (n = e.piece) === null || n === void 0 ? void 0 : n.role, c = (r = e.piece) === null || r === void 0 ? void 0 : r.color, p = (s = e.piece) === null || s === void 0 ? void 0 : s.scale, u = H("piece", `${l} ${c}`);
-  return u.setAttribute("cgHash", i), u.cgKey = a, u.cgScale = p, ut(u, de(o)(w(a), O(t)), p), u;
+  const a = t.orig, l = (n = t.piece) === null || n === void 0 ? void 0 : n.role, c = (r = t.piece) === null || r === void 0 ? void 0 : r.color, p = (s = t.piece) === null || s === void 0 ? void 0 : s.scale, h = H("piece", `${l} ${c}`);
+  return h.setAttribute("cgHash", i), h.cgKey = a, h.cgScale = p, ht(h, de(o)(w(a), O(e)), p), h;
 }
-const qo = (t) => {
-  var e, i, o;
-  return [t.orig, (e = t.piece) === null || e === void 0 ? void 0 : e.role, (i = t.piece) === null || i === void 0 ? void 0 : i.color, (o = t.piece) === null || o === void 0 ? void 0 : o.scale].join(",");
+const No = (e) => {
+  var t, i, o;
+  return [e.orig, (t = e.piece) === null || t === void 0 ? void 0 : t.role, (i = e.piece) === null || i === void 0 ? void 0 : i.color, (o = e.piece) === null || o === void 0 ? void 0 : o.scale].join(",");
 };
-function Ro(t, e) {
+function Ro(e, t) {
   const i = ro();
-  Tt(i, e || {});
+  Tt(i, t || {});
   function o() {
-    const n = "dom" in i ? i.dom.unbind : void 0, r = ko(t, i), s = wi(() => r.board.getBoundingClientRect()), a = (p) => {
-      To(c), r.autoPieces && xo(c, r.autoPieces), !p && r.svg && ao(c, r.svg, r.customSvg);
+    const n = "dom" in i ? i.dom.unbind : void 0, r = ko(e, i), s = wi(() => r.board.getBoundingClientRect()), a = (p) => {
+      To(c), r.autoPieces && Oo(c, r.autoPieces), !p && r.svg && ao(c, r.svg, r.customSvg);
     }, l = () => {
-      ot(c), Ao(c), r.autoPieces && Do(c);
+      nt(c), Ao(c), r.autoPieces && qo(c);
     }, c = i;
     return c.dom = {
       elements: r,
@@ -2943,15 +2854,15 @@ function Ro(t, e) {
       redraw: Lo(a),
       redrawNow: a,
       unbind: n
-    }, c.drawable.prevSvgHash = "", ot(c), a(!1), Po(c, l), n || (c.dom.unbind = Eo(c, l)), c.events.insert && c.events.insert(r), c;
+    }, c.drawable.prevSvgHash = "", nt(c), a(!1), Po(c, l), n || (c.dom.unbind = Eo(c, l)), c.events.insert && c.events.insert(r), c;
   }
   return no(o(), o);
 }
-function Lo(t) {
-  let e = !1;
+function Lo(e) {
+  let t = !1;
   return () => {
-    e || (e = !0, requestAnimationFrame(() => {
-      t(), e = !1;
+    t || (t = !0, requestAnimationFrame(() => {
+      e(), t = !1;
     }));
   };
 }
@@ -2961,8 +2872,8 @@ class Ko {
   boardState;
   props;
   emit;
-  constructor(e, i, o, n) {
-    this.boardState = i, this.props = o, this.emit = n, this.game = new ui(), this.board = Ro(e), this.resetBoard();
+  constructor(t, i, o, n) {
+    this.boardState = i, this.props = o, this.emit = n, this.game = new hi(), this.board = Ro(t), this.resetBoard();
   }
   //
   //  PRIVATE INTERAL METHODS:
@@ -2971,15 +2882,15 @@ class Ko {
    * syncs chess.js state with the board
    * @private
    */
-  updateGameState({ updateFen: e = !0 } = {}) {
-    this.boardState.historyViewerState.isEnabled || (e && this.board.set({ fen: this.game.fen() }), this.board.state.turnColor = this.getTurnColor(), this.board.state.movable.free ? (this.board.state.movable.color = "both", this.board.state.movable.dests = /* @__PURE__ */ new Map()) : (this.board.state.movable.color = this.props.playerColor || this.board.state.turnColor, this.board.state.movable.dests = ze(this.game)), this.displayInCheck(this.game.inCheck(), this.board.state.turnColor), this.boardState.showThreats && this.drawMoves()), this.emitEvents();
+  updateGameState({ updateFen: t = !0 } = {}) {
+    this.boardState.historyViewerState.isEnabled || (t && this.board.set({ fen: this.game.fen() }), this.board.state.turnColor = this.getTurnColor(), this.board.state.movable.free ? (this.board.state.movable.color = "both", this.board.state.movable.dests = /* @__PURE__ */ new Map()) : (this.board.state.movable.color = this.props.playerColor || this.board.state.turnColor, this.board.state.movable.dests = Ze(this.game)), this.displayInCheck(this.game.inCheck(), this.board.state.turnColor), this.boardState.showThreats && this.drawMoves()), this.emitEvents();
   }
   /**
    * Updates the board state to display whether the king of given color is in check
    * @private
    */
-  displayInCheck(e, i) {
-    if (e) {
+  displayInCheck(t, i) {
+    if (t) {
       for (const [o, n] of this.board.state.pieces)
         if (n.role === "king" && n.color === i) {
           this.board.state.check = o;
@@ -3002,16 +2913,16 @@ class Ko {
    * Changes the turn of the game, triggered by config.movable.events.after
    * @private
    */
-  async changeTurn(e, i, o) {
+  async changeTurn(t, i, o) {
     let n;
-    fi(i, this.game.get(e)) && (n = await new Promise((r) => {
+    fi(i, this.game.get(t)) && (n = await new Promise((r) => {
       this.boardState.promotionDialogState = {
         isEnabled: !0,
         color: this.getTurnColor(),
         callback: r
       };
     })), this.move({
-      from: e,
+      from: t,
       to: i,
       promotion: n
     });
@@ -3029,9 +2940,9 @@ class Ko {
    * undo last move, if possible
    */
   undoLastMove() {
-    const e = this.game.undo();
-    if (e != null && (this.boardState.historyViewerState.isEnabled && this.boardState.historyViewerState.plyViewing === this.getCurrentPlyNumber() && this.stopViewingHistory(), !this.boardState.historyViewerState.isEnabled)) {
-      this.board.set({ fen: e.before }), this.updateGameState({ updateFen: !1 });
+    const t = this.game.undo();
+    if (t != null && (this.boardState.historyViewerState.isEnabled && this.boardState.historyViewerState.plyViewing === this.getCurrentPlyNumber() && this.stopViewingHistory(), !this.boardState.historyViewerState.isEnabled)) {
+      this.board.set({ fen: t.before }), this.updateGameState({ updateFen: !1 });
       const i = this.getLastMove();
       this.board.state.lastMove = i ? [i?.from, i?.to] : void 0;
     }
@@ -3041,7 +2952,7 @@ class Ko {
    * If diff > 0 white is leading, else black.
    */
   getMaterialCount() {
-    const e = this.board.state.pieces, i = {
+    const t = this.board.state.pieces, i = {
       pawn: 1,
       knight: 3,
       bishop: 3,
@@ -3053,7 +2964,7 @@ class Ko {
       materialBlack: 0,
       materialDiff: 0
     };
-    for (const n of e)
+    for (const n of t)
       n[1].color === "white" ? o.materialWhite += i[n[1].role] : o.materialBlack += i[n[1].role];
     return o.materialDiff = o.materialWhite - o.materialBlack, o;
   }
@@ -3067,13 +2978,13 @@ class Ko {
    * of all the pieces captured by that player this game.
    */
   getCapturedPieces() {
-    const e = {
+    const t = {
       white: [],
       black: []
     };
     for (const { color: i, captured: o } of this.getHistory(!0))
-      o && e[fe(i)].push(o);
-    return e;
+      o && t[fe(i)].push(o);
+    return t;
   }
   /**
    * toggles the board orientation.
@@ -3085,7 +2996,7 @@ class Ko {
    * draws arrows and circles on the board for possible moves/captures
    */
   drawMoves() {
-    this.boardState.showThreats = !0, this.board.setShapes(hi(this.game.moves({ verbose: !0 })));
+    this.boardState.showThreats = !0, this.board.setShapes(ui(this.game.moves({ verbose: !0 })));
   }
   /**
    * removes arrows and circles from the board for possible moves/captures
@@ -3096,10 +3007,10 @@ class Ko {
   /**
    * draws an arrow on the board
    */
-  drawMove(e, i, o) {
+  drawMove(t, i, o) {
     this.board.setShapes([
       {
-        orig: e,
+        orig: t,
         dest: i,
         brush: o
       }
@@ -3116,9 +3027,9 @@ class Ko {
    */
   async getOpeningName() {
     try {
-      const e = this.game.history({ verbose: !0 }).map((n) => n.lan).join(",");
+      const t = this.game.history({ verbose: !0 }).map((n) => n.lan).join(",");
       return (await (await fetch(
-        `https://explorer.lichess.ovh/masters?play=${e}`
+        `https://explorer.lichess.ovh/masters?play=${t}`
       )).json()).opening?.name ?? null;
     } catch {
       return null;
@@ -3131,12 +3042,12 @@ class Ko {
    * { from: 'e7', to: 'e8', promotion: 'q'}
    * @returns true if the move was made, false if the move was illegal
    */
-  move(e) {
+  move(t) {
     let i;
     try {
-      i = this.game.move(e);
+      i = this.game.move(t);
     } catch {
-      return typeof e == "object" && this.board.state.movable.free && (this.board.move(e.from, e.to), this.updateGameState({ updateFen: !1 })), !1;
+      return typeof t == "object" && this.board.state.movable.free && (this.board.move(t.from, t.to), this.updateGameState({ updateFen: !1 })), !1;
     }
     return this.emit("move", i), i?.promotion && this.emit("promotion", {
       color: fe(i.color),
@@ -3159,7 +3070,7 @@ class Ko {
    *
    */
   getPossibleMoves() {
-    return ze(this.game);
+    return Ze(this.game);
   }
   /**
    *
@@ -3183,8 +3094,8 @@ class Ko {
   getLastMove() {
     return this.game.history({ verbose: !0 }).at(-1);
   }
-  getHistory(e = !1) {
-    return this.game.history({ verbose: e });
+  getHistory(t = !1) {
+    return this.game.history({ verbose: t });
   }
   /**
    * Returns the FEN string for the current position.
@@ -3249,35 +3160,35 @@ class Ko {
   /**
    * returns the color of a given square
    */
-  getSquareColor(e) {
-    return this.game.squareColor(e);
+  getSquareColor(t) {
+    return this.game.squareColor(t);
   }
   /**
    * Returns the piece on the square or null if there is no piece
    */
-  getSquare(e) {
-    return this.game.get(e);
+  getSquare(t) {
+    return this.game.get(t);
   }
   /**
    * loads a fen into the board
    * Caution: this will erase the game history. To set position with history call loadPgn with a pgn instead
    */
-  setPosition(e) {
-    this.game.load(e), this.boardState.historyViewerState = { isEnabled: !1 }, this.updateGameState();
+  setPosition(t) {
+    this.game.load(t), this.boardState.historyViewerState = { isEnabled: !1 }, this.updateGameState();
   }
   /**
    * puts a piece on a given square on the board
    * returns true on success, else false
    */
-  putPiece(e, i) {
+  putPiece(t, i) {
     if (this.board.state.movable.free) {
       const o = this.board.state.pieces;
       return o.set(i, {
-        color: e.color === "w" ? "white" : "black",
-        role: pi[e.type]
+        color: t.color === "w" ? "white" : "black",
+        role: pi[t.type]
       }), this.board.setPieces(o), !0;
     } else {
-      const o = this.game.put(e, i);
+      const o = this.game.put(t, i);
       return o && this.updateGameState(), o;
     }
   }
@@ -3285,8 +3196,8 @@ class Ko {
    * Removes a piece from the board.
    * @param square - The square where the piece is located.
    */
-  removePiece(e) {
-    this.board.state.pieces.delete(e), this.game.remove(e);
+  removePiece(t) {
+    this.board.state.pieces.delete(t), this.game.remove(t);
   }
   /**
    * removes all pieces from the board
@@ -3297,16 +3208,16 @@ class Ko {
   /**
    * draw multiple arrows on the board
    */
-  setShapes(e) {
-    this.board.setShapes(e);
+  setShapes(t) {
+    this.board.setShapes(t);
   }
   /**
    * loads a pgn into the board
    *
    * @param pgn - the pgn to load
    */
-  loadPgn(e) {
-    this.game.loadPgn(e), this.boardState.historyViewerState = { isEnabled: !1 }, this.updateGameState();
+  loadPgn(t) {
+    this.game.loadPgn(t), this.boardState.historyViewerState = { isEnabled: !1 }, this.updateGameState();
     const i = this.getLastMove();
     i && this.board.set({ lastMove: [i.from, i.to] });
   }
@@ -3332,8 +3243,8 @@ class Ko {
    *
    * @param changes a record of key value pairs to change in the PGN, eg. `{ White: 'Deep Blue', Black: 'Kasparov, Garry' }`
    */
-  setPgnInfo(e) {
-    return this.game.header(...Object.entries(e).flat());
+  setPgnInfo(t) {
+    return this.game.header(...Object.entries(t).flat());
   }
   /**
    * Sets the config of the board.
@@ -3346,14 +3257,14 @@ class Ko {
    * @param fillDefaults - if true unprovided config options will be substituted with default values, if
    * false the unprovided options will remain unchanged.
    */
-  setConfig(e, i = !1) {
-    if (i && (e = lt(bi, e), this.board.state.selected = void 0), e.movable?.events && "after" in e.movable.events) {
-      const r = e.movable.events.after;
-      e.movable.events.after = r ? async (...s) => {
+  setConfig(t, i = !1) {
+    if (i && (t = lt(bi, t), this.board.state.selected = void 0), t.movable?.events && "after" in t.movable.events) {
+      const r = t.movable.events.after;
+      t.movable.events.after = r ? async (...s) => {
         await this.changeTurn(...s), r(...s);
       } : this.changeTurn.bind(this);
     }
-    const { fen: o, ...n } = e;
+    const { fen: o, ...n } = t;
     this.board.set(n), o && this.setPosition(o), this.board.redrawAll();
   }
   /**
@@ -3362,24 +3273,24 @@ class Ko {
    * @param ply - the ply number of the position to be viewed, where 0 is the initial position, 1 is
    * after white's first move, 2 is after black's first move and so on.
    */
-  viewHistory(e) {
+  viewHistory(t) {
     const i = this.getHistory(!0);
-    if (e < 0 || e > i.length)
+    if (t < 0 || t > i.length)
       return;
-    const o = this.board.state.animation.enabled && (this.boardState.historyViewerState.isEnabled && Math.abs(this.boardState.historyViewerState.plyViewing - e) !== 1 || !this.boardState.historyViewerState.isEnabled && e !== i.length - 1);
-    if (o && this.board.set({ animation: { enabled: !1 } }), e < i.length)
-      this.boardState.historyViewerState.isEnabled ? this.boardState.historyViewerState.plyViewing = e : this.boardState.historyViewerState = {
+    const o = this.board.state.animation.enabled && (this.boardState.historyViewerState.isEnabled && Math.abs(this.boardState.historyViewerState.plyViewing - t) !== 1 || !this.boardState.historyViewerState.isEnabled && t !== i.length - 1);
+    if (o && this.board.set({ animation: { enabled: !1 } }), t < i.length)
+      this.boardState.historyViewerState.isEnabled ? this.boardState.historyViewerState.plyViewing = t : this.boardState.historyViewerState = {
         isEnabled: !0,
-        plyViewing: e,
+        plyViewing: t,
         viewOnly: this.board.state.viewOnly
       }, this.board.set({
-        fen: i[e].before,
+        fen: i[t].before,
         viewOnly: !0,
-        lastMove: e > 0 ? [i[e - 1].from, i[e - 1].to] : void 0,
+        lastMove: t > 0 ? [i[t - 1].from, i[t - 1].to] : void 0,
         selected: void 0
       }), this.displayInCheck(
-        e > 0 ? "+#".includes(i[e - 1].san.at(-1)) : !1,
-        fe(i[e].color)
+        t > 0 ? "+#".includes(i[t - 1].san.at(-1)) : !1,
+        fe(i[t].color)
       ), this.board.cancelPremove();
     else if (this.boardState.historyViewerState.isEnabled) {
       const n = i.at(-1);
@@ -3415,11 +3326,11 @@ class Ko {
    * Else, starts viewing history and views the move previous to the latest move.
    */
   viewPrevious() {
-    const e = this.boardState.historyViewerState.isEnabled ? this.boardState.historyViewerState.plyViewing : this.getCurrentPlyNumber();
-    this.viewHistory(e - 1);
+    const t = this.boardState.historyViewerState.isEnabled ? this.boardState.historyViewerState.plyViewing : this.getCurrentPlyNumber();
+    this.viewHistory(t - 1);
   }
 }
-const $o = { class: "main-board" }, Bo = /* @__PURE__ */ rt({
+const $o = { class: "main-board" }, Wo = /* @__PURE__ */ st({
   __name: "TheChessboard",
   props: {
     boardConfig: { default: () => ({}) },
@@ -3427,37 +3338,37 @@ const $o = { class: "main-board" }, Bo = /* @__PURE__ */ rt({
     reactiveConfig: { type: Boolean, default: !1 }
   },
   emits: ["boardCreated", "check", "checkmate", "stalemate", "draw", "promotion", "move"],
-  setup(t, { emit: e }) {
-    const i = t, o = Vt(null), n = je({
+  setup(e, { emit: t }) {
+    const i = e, o = t, n = Vt(null), r = Ue({
       showThreats: !1,
       promotionDialogState: { isEnabled: !1 },
       historyViewerState: { isEnabled: !1 }
     });
-    return Wt(() => {
-      if (o.value == null)
+    return jt(() => {
+      if (n.value == null)
         throw new Error("vue3-chessboard: Failed to mount board.");
-      const r = new Ko(o.value, n, i, e);
-      if (e("boardCreated", r), i.reactiveConfig) {
-        let s = me(i.boardConfig);
-        jt(je(i.boardConfig), (a) => {
-          r.setConfig(ct(s, a)), s = me(a);
+      const s = new Ko(n.value, r, i, o);
+      if (o("boardCreated", s), i.reactiveConfig) {
+        let a = ge(i.boardConfig);
+        Ft(Ue(i.boardConfig), (l) => {
+          s.setConfig(ct(a, l)), a = ge(l);
         });
       }
-    }), (r, s) => (ge(), Me("section", {
-      class: st(["main-wrap", {
-        disabledBoard: n.promotionDialogState.isEnabled,
-        viewingHistory: n.historyViewerState.isEnabled
+    }), (s, a) => (me(), xe("section", {
+      class: at(["main-wrap", {
+        disabledBoard: r.promotionDialogState.isEnabled,
+        viewingHistory: r.historyViewerState.isEnabled
       }])
     }, [
-      Te("div", $o, [
-        n.promotionDialogState.isEnabled ? (ge(), Ut(Zt, {
+      De("div", $o, [
+        r.promotionDialogState.isEnabled ? (me(), Ut(Zt, {
           key: 0,
-          state: n.promotionDialogState,
-          onPromotionSelected: s[0] || (s[0] = (a) => n.promotionDialogState = { isEnabled: !1 })
+          state: r.promotionDialogState,
+          onPromotionSelected: a[0] || (a[0] = (l) => r.promotionDialogState = { isEnabled: !1 })
         }, null, 8, ["state"])) : Qt("", !0),
-        Te("div", {
+        De("div", {
           ref_key: "boardElement",
-          ref: o
+          ref: n
         }, null, 512)
       ])
     ], 2));
@@ -3465,5 +3376,5 @@ const $o = { class: "main-board" }, Bo = /* @__PURE__ */ rt({
 });
 export {
   Ko as BoardApi,
-  Bo as TheChessboard
+  Wo as TheChessboard
 };
