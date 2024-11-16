@@ -29,7 +29,7 @@
   "types": "./dist/src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KelioDev/chess.js-mtp.git"
+    "url": "git+https://github.com/KelioDev/vue3-chessboard-mtp.git"
   },
   "bugs": {
     "url": "https://github.com/qwerty084/vue3-chessboard/issues",
